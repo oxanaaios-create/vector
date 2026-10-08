@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#060a13">
 <title>VECTOR — Заражение против Лекарства</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#060a13; --panel:rgba(11,17,31,.86); --panel2:rgba(20,29,50,.7); --line:rgba(148,163,184,.16);
@@ -56,85 +57,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .linkrow input{flex:1;min-width:0;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--muted);font:12px var(--mono)}
 .linkrow button{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:0 14px;font-weight:600}
 .small{font-size:12px;color:var(--muted);line-height:1.5;margin-top:14px}
-/* ---------- Game ---------- */
 #game{overflow:hidden}
 #map{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
-#top{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;gap:18px;padding:12px 16px;background:linear-gradient(180deg,rgba(6,10,19,.92),rgba(6,10,19,0));pointer-events:none}
-#top>*{pointer-events:auto}
-.brand{font-weight:800;letter-spacing:.16em;font-size:13px}
-.brand b{color:var(--path)}
-.pop{flex:1;max-width:620px;min-width:0}
-.popbar{height:8px;border-radius:99px;background:rgba(255,255,255,.07);display:flex;overflow:hidden}
-.popbar i{display:block;height:100%;transition:width .6s}
-.poplab{display:flex;gap:16px;margin-top:6px;font:12px var(--mono);color:var(--muted);flex-wrap:wrap}
-.poplab span b{color:var(--text);font-weight:600}
-.poplab em{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;font-style:normal}
-.curebar{width:170px}
-.curebar .t{display:flex;justify-content:space-between;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.curebar .t b{color:var(--cure);font-family:var(--mono)}
-.curebar .b{height:8px;border-radius:99px;background:rgba(255,255,255,.07);margin-top:6px;overflow:hidden}
-.curebar .b i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1fb89e,var(--cure));transition:width .6s}
-.day{font:700 13px var(--mono);color:var(--muted);white-space:nowrap}
-.day b{color:var(--text);font-size:16px}
-.ibtn{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);display:grid;place-items:center;font-size:14px;font-weight:700}
-.ibtn:hover{background:rgba(255,255,255,.1)}
-#panel{position:absolute;top:70px;right:14px;bottom:96px;width:372px;background:var(--panel);border:1px solid var(--line);border-radius:20px;backdrop-filter:blur(16px);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.ph{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
-.ph .who{display:flex;align-items:center;gap:10px;font-weight:700}
-.ph .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:800;background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
-.ph .who small{display:block;color:var(--muted);font-weight:500;font-size:12px}
-.res{display:flex;align-items:baseline;gap:8px;margin:12px 0 8px}
-.res b{font:800 34px var(--mono);color:var(--accent);letter-spacing:-.03em}
-.res span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
-.res b.bump{animation:bump .4s}
-@keyframes bump{40%{transform:scale(1.18)}}
-.meters{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
-.m .l{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px}
-.m .l b{color:var(--text);font-family:var(--mono);font-weight:600}
-.m .bar{height:4px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden}
-.m .bar i{display:block;height:100%;background:var(--c,var(--accent));width:0;transition:width .5s}
-.ptabs{display:flex;gap:2px;padding:8px 10px 0;border-bottom:1px solid var(--line)}
-.ptabs button{flex:1;border:0;background:transparent;color:var(--muted);padding:9px 2px 11px;font-weight:600;font-size:12.5px;border-bottom:2px solid transparent;margin-bottom:-1px}
-.ptabs button.on{color:var(--text);border-color:var(--accent)}
-#list{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:8px}
-#list::-webkit-scrollbar{width:6px}#list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:9px}
-.item{text-align:left;border:1px solid var(--line);background:var(--panel2);border-radius:13px;padding:11px 12px;display:block;width:100%;transition:.15s;position:relative}
-.item .ih{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.item b{font-size:13.5px}
-.item p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.4}
-.item .cost{font:700 12px var(--mono);padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.08);white-space:nowrap}
-.item .req{display:block;margin-top:5px;font-size:11px;color:var(--warn);font-style:normal}
-.item.can{border-color:color-mix(in srgb,var(--accent) 55%,transparent)}
-.item.can .cost{background:var(--accent);color:#0a0f1d}
-.item.can:hover{background:color-mix(in srgb,var(--accent) 10%,transparent);transform:translateY(-1px)}
-.item.cant{opacity:.62}
-.item.lock{opacity:.4}
-.item.own{opacity:.55;border-color:transparent;background:rgba(255,255,255,.03)}
-.item.own .cost{background:transparent;color:var(--accent)}
-.item.cd{opacity:.5}
-.rrow{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
-.rrow .n{flex:1;min-width:0;font-weight:600;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rrow .n small{display:block;color:var(--muted);font-weight:500;font-size:11px;font-family:var(--mono)}
-.tg{width:34px;height:30px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:11px;font-weight:700;color:var(--muted)}
-.tg.on{background:var(--path);border-color:var(--path);color:#fff}
-.tg.q.on{background:var(--warn);border-color:var(--warn);color:#241600}
-.tg.a.on{background:#ff7a3d;border-color:#ff7a3d;color:#fff}
-#rc{position:absolute;left:14px;bottom:100px;width:300px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px;backdrop-filter:blur(16px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
-#rc h3{margin:0;font-size:16px}
-#rc .sub{color:var(--muted);font-size:12px;margin:3px 0 10px}
-#rc .st{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:12px;margin-bottom:6px}
-#rc .st .bar{height:5px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden}
-#rc .st .bar i{display:block;height:100%}
-#rc .st b{font-family:var(--mono);font-weight:600;font-size:11.5px}
-#rc .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
-#rc .acts button{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:8px 2px;font-size:11.5px;font-weight:600;line-height:1.25}
-#rc .acts button small{display:block;color:var(--muted);font-family:var(--mono);font-size:10.5px}
-#rc .acts button.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,transparent)}
-#rc .x{position:absolute;right:10px;top:10px;border:0;background:transparent;color:var(--muted);font-size:18px}
-#ticker{position:absolute;left:14px;right:400px;bottom:14px;display:flex;flex-direction:column;gap:5px;pointer-events:none}
-.news{align-self:flex-start;max-width:100%;padding:8px 13px;border-radius:11px;background:var(--panel);border:1px solid var(--line);font-size:12.5px;color:var(--muted);backdrop-filter:blur(10px);animation:in .4s}
-.news b{font:700 11px var(--mono);color:var(--text);margin-right:8px}
-.news.fresh{color:var(--text);border-color:color-mix(in srgb,var(--accent) 50%,transparent)}
 @keyframes in{from{opacity:0;transform:translateY(8px)}}
 #tip{position:fixed;pointer-events:none;background:rgba(6,10,19,.94);border:1px solid var(--line);border-radius:9px;padding:6px 10px;font-size:12px;z-index:30;white-space:nowrap}
 .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(4,7,14,.72);backdrop-filter:blur(8px);z-index:20;padding:16px}
@@ -157,26 +81,191 @@ button{font:inherit;color:inherit;cursor:pointer}
 .toast{background:rgba(10,15,28,.96);border:1px solid var(--line);padding:9px 16px;border-radius:11px;font-size:13px;animation:in .25s;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .toast.err{border-color:var(--path)}
 #pausebanner{position:absolute;left:50%;top:78px;transform:translateX(-50%);padding:8px 18px;border-radius:99px;background:var(--warn);color:#241600;font-weight:800;letter-spacing:.12em;font-size:12px;z-index:15}
-#sheet{display:none}
+/* ===== v2 game UI ===== */
+:root{--sans:"Exo 2",Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--glow:var(--accent)}
+body{font-family:var(--sans)}
+body.role-cure{--accent:var(--cure)}
+.glass{position:absolute;background:linear-gradient(180deg,rgba(16,24,44,.84),rgba(8,12,24,.88));border:1px solid rgba(140,165,215,.18);backdrop-filter:blur(14px);box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,.4) inset}
+.glass::before,.glass::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--accent);opacity:.9;pointer-events:none;filter:drop-shadow(0 0 4px var(--accent))}
+.glass::before{left:-1px;top:-1px;border-right:0;border-bottom:0;border-top-left-radius:6px}
+.glass::after{right:-1px;bottom:-1px;border-left:0;border-top:0;border-bottom-right-radius:6px}
+#scan{position:absolute;inset:0;pointer-events:none;z-index:2;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px),radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%)}
+#hud{position:absolute;left:12px;right:12px;top:10px;height:60px;display:flex;align-items:center;gap:18px;padding:0 16px;z-index:5;border-radius:14px}
+.brand{font-weight:800;letter-spacing:.2em;font-size:15px;text-shadow:0 0 14px rgba(255,59,107,.6)}
+.brand b{color:var(--path)}
+.dayb{display:flex;flex-direction:column;line-height:1;padding:0 14px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.dayb small{font-size:9.5px;letter-spacing:.2em;color:var(--muted);font-weight:700}
+.dayb b{font:700 22px var(--mono);color:#fff;text-shadow:0 0 12px var(--accent)}
+.pop{flex:1;min-width:0}
+.popbar{height:10px;border-radius:99px;background:rgba(255,255,255,.07);display:flex;overflow:hidden;box-shadow:0 0 12px rgba(111,149,255,.18) inset}
+.popbar i{display:block;height:100%;transition:width .6s}
+#bI{box-shadow:0 0 12px var(--path)}
+.poplab{display:flex;gap:18px;margin-top:6px;font:12px var(--mono);color:var(--muted);flex-wrap:wrap}
+.poplab b{color:var(--text);font-weight:600}
+.poplab em{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;font-style:normal;box-shadow:0 0 8px currentColor}
+.rings{display:flex;gap:22px;margin-right:6px}
+.ring{position:relative;width:44px;height:44px}
+.ring>svg{width:44px;height:44px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:4}
+.ring .bg{stroke:rgba(255,255,255,.09)}
+.ring .fg{stroke-linecap:round;transition:stroke-dashoffset .6s;filter:drop-shadow(0 0 4px currentColor)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;color:currentColor}
+.ringw{display:flex;align-items:center;gap:8px}.rl{display:flex;flex-direction:column;line-height:1.1}.rl small{font-size:9px;letter-spacing:.16em;color:var(--muted);font-weight:700}.rl b{font:800 17px var(--mono);color:#fff}.ring span svg{width:16px;height:16px}
+.ibtn{width:38px;height:38px;border-radius:11px;border:1px solid rgba(140,165,215,.22);background:rgba(255,255,255,.04);display:grid;place-items:center;transition:.15s}
+.ibtn svg{width:18px;height:18px}
+.ibtn:hover{background:rgba(255,255,255,.12);box-shadow:0 0 14px rgba(255,255,255,.12)}
+#panel{top:80px;right:12px;bottom:12px;width:476px;border-radius:18px;display:flex;flex-direction:column;overflow:hidden;z-index:5}
+.ph{padding:14px 16px 10px;border-bottom:1px solid rgba(140,165,215,.14);background:radial-gradient(400px 120px at 0 0,color-mix(in srgb,var(--accent) 16%,transparent),transparent)}
+.who{display:flex;align-items:center;gap:12px}
+.badge{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,#0a1020);border:1px solid color-mix(in srgb,var(--accent) 60%,transparent);box-shadow:0 0 18px color-mix(in srgb,var(--accent) 45%,transparent)}
+.badge svg{width:24px;height:24px}
+.who b{font-size:17px;font-weight:800;letter-spacing:.02em}
+.who small{display:block;color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.resrow{display:flex;align-items:center;gap:12px;margin:10px 0 8px}
+.resico{width:34px;height:34px;color:var(--accent);filter:drop-shadow(0 0 8px var(--accent));flex:none}
+.res{display:flex;align-items:baseline;gap:8px}
+.res b{font:800 36px/1 var(--mono);color:#fff;letter-spacing:-.04em;text-shadow:0 0 18px var(--accent)}
+.res span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+.res b.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.22);color:var(--accent)}}
+#combo{margin-left:auto;padding:5px 12px;border-radius:99px;font:800 13px var(--mono);letter-spacing:.06em;color:#1a1200;background:linear-gradient(90deg,#ffd24d,#ff9a3d);box-shadow:0 0 18px rgba(255,170,60,.7);opacity:0;transform:scale(.8);transition:.2s}
+#combo.on{opacity:1;transform:none;animation:pulse2 .9s infinite}
+@keyframes pulse2{50%{box-shadow:0 0 28px rgba(255,170,60,1)}}
+.meters{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 12px}
+.m .l{display:flex;justify-content:space-between;font-size:9.5px;color:var(--muted);margin-bottom:4px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.m .l b{color:var(--text);font-family:var(--mono);font-weight:600}
+.m .bar{height:5px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden}
+.m .bar i{display:block;height:100%;background:var(--c,var(--accent));box-shadow:0 0 8px var(--c,var(--accent));width:0;transition:width .5s;border-radius:9px}
+.ptabs{display:flex;gap:4px;padding:8px 10px 0;border-bottom:1px solid rgba(140,165,215,.14)}
+.ptabs button{flex:1;border:0;background:transparent;color:var(--muted);padding:8px 2px 9px;font-weight:700;font-size:11.5px;letter-spacing:.04em;border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;flex-direction:column;align-items:center;gap:4px;transition:.15s}
+.ptabs button svg{width:20px;height:20px}
+.ptabs button:hover{color:var(--text)}
+.ptabs button.on{color:var(--tc,var(--text));border-color:var(--tc,var(--accent));background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--tc,#fff) 12%,transparent));text-shadow:0 0 10px var(--tc)}
+.ptabs button.on svg{filter:drop-shadow(0 0 6px var(--tc))}
+#treewrap{flex:1;overflow:auto;position:relative;background:radial-gradient(circle at 1px 1px,rgba(140,165,215,.12) 1px,transparent 0) 0 0/24px 24px}
+#treewrap::-webkit-scrollbar,#list::-webkit-scrollbar{width:6px}
+#treewrap::-webkit-scrollbar-thumb,#list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:9px}
+#tree{position:relative;margin:0 auto}
+#tree svg{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.link{fill:none;stroke:rgba(140,165,215,.22);stroke-width:3;stroke-linecap:round}
+.link.deco{stroke-dasharray:2 7;stroke-width:2;stroke:rgba(140,165,215,.16)}
+.link.on{stroke:color-mix(in srgb,var(--c) 55%,#243050)}
+.link.lit{stroke:var(--c);filter:drop-shadow(0 0 5px var(--c))}
+.catname{position:absolute;right:12px;top:8px;font-size:10px;letter-spacing:.22em;font-weight:800;color:var(--c);opacity:.85;text-shadow:0 0 10px var(--c)}
+.node{position:absolute;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;border:2px solid rgba(140,165,215,.28);background:radial-gradient(circle at 50% 30%,#1a2646,#0b1222 70%);color:#6c7a99;display:grid;place-items:center;padding:0;transition:transform .15s,box-shadow .2s,border-color .2s,color .2s}
+.node .ni{width:30px;height:30px;display:grid;place-items:center}
+.node .ni svg{width:30px;height:30px}
+.node .pips{position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);display:flex;gap:3px}
+.node .pips i{width:8px;height:4px;border-radius:2px;background:rgba(255,255,255,.12)}
+.node .pips i.f{background:var(--c);box-shadow:0 0 6px var(--c)}
+.node .cdt{position:absolute;inset:0;border-radius:50%;background:rgba(5,8,16,.78);display:none;place-items:center;font:700 13px var(--mono);color:#fff}
+.node.cd .cdt{display:grid}
+.node .lk{position:absolute;right:-4px;top:-4px;width:20px;height:20px;border-radius:50%;background:#0b1222;border:1px solid rgba(140,165,215,.4);display:none;place-items:center;color:#8d9ab8}
+.node .lk svg{width:11px;height:11px}
+.node.lock .lk{display:grid}
+.node.lock{opacity:.45;filter:grayscale(.6)}
+.node.need{color:color-mix(in srgb,var(--c) 55%,#6c7a99);border-color:color-mix(in srgb,var(--c) 35%,#243050)}
+.node.avail{color:var(--c);border-color:var(--c);box-shadow:0 0 16px color-mix(in srgb,var(--c) 70%,transparent),0 0 0 4px color-mix(in srgb,var(--c) 14%,transparent);animation:av 1.8s infinite}
+@keyframes av{50%{box-shadow:0 0 28px var(--c),0 0 0 7px color-mix(in srgb,var(--c) 18%,transparent)}}
+.node.own,.node.max{color:#fff;border-color:var(--c);background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--c) 55%,#12182c),color-mix(in srgb,var(--c) 18%,#0a0f1d) 75%);box-shadow:0 0 18px color-mix(in srgb,var(--c) 60%,transparent)}
+.node.own .ni svg,.node.max .ni svg{filter:drop-shadow(0 0 5px #fff)}
+.node.max{box-shadow:0 0 0 3px #0b1222,0 0 0 5px var(--c),0 0 26px var(--c)}
+.node.sel{transform:scale(1.14);z-index:3}
+.node.sel::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1.5px dashed #fff;opacity:.7;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.node:hover{transform:scale(1.08)}
+.node.flash{animation:flash .6s}
+@keyframes flash{0%{box-shadow:0 0 0 0 #fff}100%{box-shadow:0 0 0 30px transparent}}
+#insp{border-top:1px solid rgba(140,165,215,.18);background:linear-gradient(180deg,rgba(10,16,30,.95),rgba(8,12,22,.98));padding:10px 14px 12px;min-height:178px;display:flex;flex-direction:column;gap:7px}
+#insp .t{display:flex;gap:12px;align-items:center}
+#insp .bigi{width:46px;height:46px;border-radius:14px;border:1.5px solid var(--c);color:var(--c);display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,#0a0f1d);box-shadow:0 0 20px color-mix(in srgb,var(--c) 45%,transparent);flex:none}
+#insp .bigi svg{width:30px;height:30px}
+#insp h4{margin:0;font-size:16px;font-weight:800;letter-spacing:.02em}
+#insp .lv{display:flex;align-items:center;gap:8px;margin-top:4px;font:600 11px var(--mono);color:var(--muted)}
+#insp .lv .pp{display:flex;gap:3px}
+#insp .lv .pp i{width:18px;height:6px;border-radius:3px;background:rgba(255,255,255,.12)}
+#insp .lv .pp i.f{background:var(--c);box-shadow:0 0 8px var(--c)}
+#insp p{margin:0;color:var(--muted);font-size:11.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#insp .fx{display:grid;gap:3px}
+#insp .fx div{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;align-items:center;font-size:12px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.035)}
+#insp .fx .a{color:var(--muted);font-family:var(--mono)}
+#insp .fx .ar{color:var(--muted);opacity:.6}
+#insp .fx .n{font:700 12px var(--mono);color:#7cf29a}
+#insp .fx .n.bad{color:#ff8a8a}
+#insp .fx .n.same{color:var(--text)}
+#insp .req{font-size:11.5px;color:var(--warn);font-weight:600}
+#insp .acts{display:flex;gap:8px;margin-top:auto}
+.buy{flex:1;border:0;border-radius:11px;padding:10px;font:800 14px var(--sans);letter-spacing:.04em;color:#06101c;background:var(--c);box-shadow:0 0 22px color-mix(in srgb,var(--c) 60%,transparent);display:flex;align-items:center;justify-content:center;gap:8px;transition:.15s}
+.buy svg{width:18px;height:18px}
+.buy:hover{transform:translateY(-1px);filter:brightness(1.1)}
+.buy:disabled{background:rgba(255,255,255,.07);color:var(--muted);box-shadow:none;cursor:not-allowed;transform:none;filter:none}
+.buy.alt{flex:none;background:transparent;color:var(--c);border:1.5px solid var(--c);box-shadow:none;padding:12px 18px}
+#list{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:8px}
+.rrow{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid rgba(140,165,215,.16);border-radius:12px;background:rgba(255,255,255,.03)}
+.rrow .n{flex:1;min-width:0;font-weight:700;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.rrow .n small{display:block;color:var(--muted);font-weight:500;font-size:11px;font-family:var(--mono)}
+.tg{width:38px;height:34px;border-radius:9px;border:1px solid rgba(140,165,215,.22);background:rgba(255,255,255,.04);color:var(--muted);display:grid;place-items:center}
+.tg svg{width:17px;height:17px}
+.tg.b.on{background:#ff4646;border-color:#ff4646;color:#fff;box-shadow:0 0 12px #ff4646}
+.tg.q.on{background:var(--warn);border-color:var(--warn);color:#241600;box-shadow:0 0 12px var(--warn)}
+.tg.a.on{background:#ff7a3d;border-color:#ff7a3d;color:#fff;box-shadow:0 0 12px #ff7a3d}
+#rc{left:12px;bottom:92px;width:310px;border-radius:16px;padding:14px;z-index:5}
+#rc h3{margin:0;font-size:17px;letter-spacing:.02em}
+#rc .sub{color:var(--muted);font-size:12px;margin:3px 0 10px}
+#rc .st{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:12px;margin-bottom:6px}
+#rc .st .bar{height:5px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden}
+#rc .st .bar i{display:block;height:100%;box-shadow:0 0 6px currentColor}
+#rc .st b{font-family:var(--mono);font-weight:600;font-size:11.5px}
+#rc .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+#rc .acts button{border:1px solid rgba(140,165,215,.22);background:rgba(255,255,255,.04);border-radius:10px;padding:8px 2px;font-size:11px;font-weight:700;line-height:1.25;display:flex;flex-direction:column;align-items:center;gap:3px}
+#rc .acts button svg{width:18px;height:18px}
+#rc .acts button small{color:var(--muted);font-family:var(--mono);font-size:10.5px}
+#rc .acts button.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 18%,transparent);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 50%,transparent)}
+#rc .x{position:absolute;right:10px;top:8px;border:0;background:transparent;color:var(--muted);font-size:20px}
+#ticker{position:absolute;left:12px;right:504px;bottom:14px;display:flex;flex-direction:column;gap:5px;pointer-events:none;z-index:4}
+.news{align-self:flex-start;max-width:100%;padding:8px 13px;border-radius:10px;background:rgba(8,12,24,.82);border:1px solid rgba(140,165,215,.16);border-left:3px solid var(--accent);font-size:12.5px;color:var(--muted);backdrop-filter:blur(10px);animation:in .4s}
+.news b{font:700 11px var(--mono);color:var(--accent);margin-right:8px}
+.news.fresh{color:var(--text)}
+#floats{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden}
+.fl{position:absolute;font:800 18px var(--mono);color:#fff;text-shadow:0 0 12px var(--c),0 2px 0 #000;transform:translate(-50%,-50%);animation:fl 1.1s ease-out forwards;white-space:nowrap}
+@keyframes fl{to{transform:translate(-50%,-190%);opacity:0}}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pg{border:1px solid rgba(140,165,215,.2);background:rgba(255,255,255,.04);border-radius:14px;padding:12px;text-align:left;transition:.15s}
+.pg .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,59,107,.14);color:var(--path);margin-bottom:8px;box-shadow:0 0 16px rgba(255,59,107,.3)}
+.pg .ico svg{width:26px;height:26px}
+.pg b{display:block;margin-bottom:4px}.pg span{font-size:12px;color:var(--muted);line-height:1.4;display:block}
+.pg:hover{border-color:rgba(255,59,107,.6)}
+.pg.on{border-color:var(--path);box-shadow:0 0 0 1px var(--path) inset,0 0 24px rgba(255,59,107,.35);background:rgba(255,59,107,.1)}
+.card{border-radius:22px}
+#pausebanner{position:absolute;left:50%;top:84px;transform:translateX(-50%);padding:8px 20px;border-radius:99px;background:var(--warn);color:#241600;font-weight:800;letter-spacing:.2em;font-size:12px;z-index:15;box-shadow:0 0 24px var(--warn)}
+body.setup #panel{display:none}
+.ov.soft{padding-bottom:16px}
+.ov.soft .card{padding:16px}.ov.soft .pg{padding:10px}.ov.soft .pg .ico{width:36px;height:36px;margin-bottom:6px}.ov.soft h2{font-size:22px}.ov.soft p.lead{margin-bottom:10px}
 @media (max-width:920px){
-  .lob{grid-template-columns:1fr;gap:20px}
-  .hero p{display:none}
-  .pgrid{grid-template-columns:1fr 1fr}
-  #top{gap:8px 10px;padding:8px 10px;flex-wrap:wrap}
+  #hud{left:6px;right:6px;top:6px;height:auto;padding:8px 10px;gap:8px 10px;flex-wrap:wrap;border-radius:12px}
   .brand{display:none}
-  .pop{flex:1 1 100%;max-width:none}
-  .poplab{gap:12px;font-size:11px;flex-wrap:nowrap;white-space:nowrap}
-  .curebar{flex:1;width:auto}
-  .day{margin-left:auto}
+  .pop{flex:1 1 100%;order:3}
+  .dayb{border:0;padding:0}.dayb b{font-size:17px}
+  .rings{margin-left:auto;gap:8px}.ring,.ring>svg{width:34px;height:34px}.rl{display:none}.ring span svg{width:13px;height:13px}.rings{gap:10px}
   .ibtn{width:32px;height:32px}
-  #panel{top:auto;left:8px;right:8px;bottom:8px;width:auto;height:44vh;border-radius:18px}
-  .ph{padding:10px 12px 8px}.res{margin:6px 0}.res b{font-size:26px}
+  .poplab{gap:12px;font-size:11px;flex-wrap:nowrap;white-space:nowrap;margin-top:4px}
+  #panel{top:auto;left:6px;right:6px;bottom:6px;width:auto;height:60vh;border-radius:16px}
+  .ph{padding:8px 12px 6px}.who b{font-size:14px}.badge{width:32px;height:32px}.badge svg{width:18px;height:18px}
+  .resrow{margin:6px 0 2px}.res b{font-size:28px}.resico{width:26px;height:26px}
   .meters{display:none}
-  #rc{left:8px;right:8px;width:auto;bottom:calc(44vh + 16px);padding:10px}
-  #rc .st{margin-bottom:3px}
+  .ptabs button{padding:5px 2px 6px;font-size:10px;gap:2px}.ptabs button svg{width:17px;height:17px}
+  #insp{min-height:0;padding:8px 10px 10px;gap:6px}
+  #insp .bigi{width:40px;height:40px}#insp .bigi svg{width:24px;height:24px}
+  #insp p{display:none}#insp .fx div:nth-child(n+3){display:none}
+  .buy{padding:10px}
+  #rc{left:6px;right:6px;width:auto;bottom:calc(60vh + 12px);padding:8px 12px}
+  #rc .st,#rc .sub{display:none}#rc h3{font-size:14px}
+  #rc .acts{margin-top:6px}
   #ticker{display:none}
-  .ov.soft{padding-bottom:calc(44vh + 16px)}
+  .ov.soft{padding-bottom:10px}
+  .pg span{display:none}
 }
+
 </style>
 </head>
 <body>
@@ -237,31 +326,36 @@ button{font:inherit;color:inherit;cursor:pointer}
     </div>
   </div>
 </section>
-
-<!-- ============ GAME ============ -->
 <section id="game" class="screen hidden">
   <canvas id="map"></canvas>
-  <div id="top">
+  <div id="floats"></div>
+  <div id="scan"></div>
+  <div id="hud" class="glass">
     <div class="brand">VEC<b>TOR</b></div>
+    <div class="dayb"><small>ДЕНЬ</small><b id="day">0</b></div>
     <div class="pop">
       <div class="popbar"><i id="bH" style="background:var(--healthy)"></i><i id="bI" style="background:var(--path)"></i><i id="bD" style="background:var(--dead)"></i><i id="bC" style="background:var(--cure)"></i></div>
-      <div class="poplab"><span><em style="background:var(--healthy)"></em><b id="nH">—</b></span><span><em style="background:var(--path)"></em><b id="nI">—</b></span><span><em style="background:var(--dead)"></em><b id="nD">—</b></span><span><em style="background:var(--cure)"></em><b id="nC">—</b></span></div>
+      <div class="poplab"><span><em style="background:var(--healthy);color:var(--healthy)"></em><b id="nH">—</b></span><span><em style="background:var(--path);color:var(--path)"></em><b id="nI">—</b></span><span><em style="background:var(--dead);color:var(--dead)"></em><b id="nD">—</b></span><span><em style="background:var(--cure);color:var(--cure)"></em><b id="nC">—</b></span></div>
     </div>
-    <div class="curebar"><div class="t"><span>Лекарство</span><b id="cpct">—</b></div><div class="b"><i id="cfill"></i></div></div>
-    <div class="day">ДЕНЬ <b id="day">0</b></div>
-    <button class="ibtn" id="pausebtn" title="Пауза (пробел)">❚❚</button>
-    <button class="ibtn" id="mutebtn" title="Звук">♪</button>
+    <div class="rings">
+      <div class="ringw"><div class="ring" style="color:var(--path)"><svg viewBox="0 0 46 46"><circle class="bg" cx="23" cy="23" r="19"/><circle class="fg" id="iring" cx="23" cy="23" r="19" stroke="currentColor" stroke-dasharray="119.4" stroke-dashoffset="119.4"/></svg><span id="ri"></span></div><div class="rl"><small>ЗАРАЗА</small><b id="ipct">0%</b></div></div>
+      <div class="ringw"><div class="ring" style="color:var(--cure)"><svg viewBox="0 0 46 46"><circle class="bg" cx="23" cy="23" r="19"/><circle class="fg" id="cring" cx="23" cy="23" r="19" stroke="currentColor" stroke-dasharray="119.4" stroke-dashoffset="119.4"/></svg><span id="rc2"></span></div><div class="rl"><small>ЛЕКАРСТВО</small><b id="cpct">—</b></div></div>
+    </div>
+    <button class="ibtn" id="pausebtn" title="Пауза (пробел)"></button>
+    <button class="ibtn" id="mutebtn" title="Звук"></button>
   </div>
-  <aside id="panel">
+  <aside id="panel" class="glass">
     <div class="ph">
-      <div class="who"><div class="ico" id="pico">V</div><div><span id="pname">—</span><small id="psub">—</small></div></div>
-      <div class="res"><b id="resv">0</b><span id="resl">ДНК</span></div>
+      <div class="who"><div class="badge" id="pico"></div><div><b id="pname">—</b><small id="psub">—</small></div></div>
+      <div class="resrow"><div class="resico" id="resico"></div><div class="res"><b id="resv">0</b><span id="resl">ДНК</span></div><div id="combo">×2</div></div>
       <div class="meters" id="meters"></div>
     </div>
     <div class="ptabs" id="ptabs"></div>
-    <div id="list"></div>
+    <div id="treewrap"><div id="tree"></div></div>
+    <div id="list" class="hidden"></div>
+    <div id="insp"></div>
   </aside>
-  <div id="rc" class="hidden"></div>
+  <div id="rc" class="glass hidden"></div>
   <div id="ticker"></div>
   <div id="pausebanner" class="hidden">ПАУЗА</div>
   <div id="ovsetup" class="ov hidden"></div>
@@ -281,10 +375,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 </script>
 <script>
-/* VECTOR — game engine (pure, host-authoritative). */
-const TICK_MS = 800;
+/* VECTOR — game engine v2 (pure, host-authoritative). 5-level skill trees. */
+const TICK_MS = 960;
 const _env=(typeof process!=='undefined'&&process.env)||{};
-let LETH_K = +(_env.LK||.022), CURE_K = +(_env.CK||.17);
+let LETH_K = +(_env.LK||.03), CURE_K = +(_env.CK||.152);
+const MAXLV = 5;
+const LV_COST = [1,1.3,1.7,2.2,2.8];
+const lvScale = L => L<=0?0:1+.35*(L-1);
 
 const REG = [
   ['usw','Запад США',-120,38,70,.9,'temp',1,1],
@@ -328,7 +425,7 @@ const LAND = [
 function dist(a,b){ const m=Math.cos((a.lat+b.lat)/2*Math.PI/180); return Math.hypot((a.lon-b.lon)*m,a.lat-b.lat); }
 const ADJ = REG.map(()=>[]);
 LAND.forEach(([a,b])=>{ADJ[a].push(b);ADJ[b].push(a);});
-const SEA = REG.map(()=>[]);   // [j, weight]
+const SEA = REG.map(()=>[]);
 const AIRL = REG.map(()=>[]);
 (function(){
   let maxw=0;
@@ -344,121 +441,135 @@ const TOTAL_POP = REG.reduce((s,r)=>s+r.pop,0);
 
 /* ---------- Pathogens ---------- */
 const PATHOGENS = [
-  {id:'virus',name:'Вирус',icon:'V',desc:'Заражает быстрее всех, но слабо защищён от лекарства.',inf:1.12,cure:1.0,vis:1,climHalf:0,cost:{trans:.9,symp:.9,abil:1}},
-  {id:'bact',name:'Бактерия',icon:'B',desc:'Стойкая к климату, способности дешевле. Заражает средне.',inf:1.0,cure:1.0,vis:1,climHalf:1,cost:{trans:1,symp:1,abil:.75}},
-  {id:'fungus',name:'Грибок',icon:'F',desc:'Медленный, но лекарство от него создаётся заметно дольше.',inf:.9,cure:.88,vis:1,climHalf:0,cost:{trans:1,symp:1,abil:1}},
-  {id:'para',name:'Паразит',icon:'P',desc:'Скрытный: заметность на 35% ниже, но заражает слабее.',inf:.99,cure:1,vis:.65,climHalf:0,cost:{trans:1,symp:.9,abil:1}},
+  {id:'virus',name:'Вирус',icon:'virus',desc:'Заражает быстрее всех, но слабо защищён от лекарства.',inf:1.12,cure:1.0,vis:1,climHalf:0,cost:{trans:.9,symp:.9,abil:1}},
+  {id:'bact',name:'Бактерия',icon:'bact',desc:'Стойкая к климату, способности дешевле. Заражает средне.',inf:1.0,cure:1.0,vis:1,climHalf:1,cost:{trans:1,symp:1,abil:.75}},
+  {id:'fungus',name:'Грибок',icon:'fungus',desc:'Медленный, но лекарство от него создаётся заметно дольше.',inf:.9,cure:.88,vis:1,climHalf:0,cost:{trans:1,symp:1,abil:1}},
+  {id:'para',name:'Паразит',icon:'para',desc:'Скрытный: заметность на 35% ниже, но заражает слабее.',inf:.99,cure:1,vis:.65,climHalf:0,cost:{trans:1,symp:.9,abil:1}},
 ];
 
-/* ---------- Pathogen traits ---------- */
-// tr: transmission power, inf/vis/sev/leth: stat bonuses
+/* ---------- Pathogen traits (5 levels each). at:[col,row] tree position ---------- */
 const TRAITS = [
-  {id:'air1',cat:'trans',name:'Воздушно-капельный',desc:'Передаётся при кашле и разговоре. Лучше всего в богатых плотных странах.',cost:12,tr:{air:.8}},
-  {id:'air2',cat:'trans',name:'Аэрозоль',desc:'Держится в воздухе часами.',cost:26,req:['air1'],tr:{air:.8}},
-  {id:'wat1',cat:'trans',name:'Загрязнённая вода',desc:'Растёт в бедных регионах без очистки воды. Слаб в пустынях.',cost:12,tr:{water:.8}},
-  {id:'wat2',cat:'trans',name:'Устойчивость в воде',desc:'Выживает в хлорированной воде.',cost:24,req:['wat1'],tr:{water:.7}},
-  {id:'ins',cat:'trans',name:'Насекомые-переносчики',desc:'Комары и мухи. Сильно в жарком климате.',cost:14,tr:{insect:.9}},
-  {id:'rod',cat:'trans',name:'Грызуны',desc:'Крысы в портах и трущобах. Открывает морские пути.',cost:12,tr:{rodent:.7}},
-  {id:'liv',cat:'trans',name:'Скот',desc:'Передаётся от животных. Сильнее вне больших городов.',cost:12,tr:{live:.6}},
-  {id:'blood',cat:'trans',name:'Кровь',desc:'Через контакты с кровью. Работает везде понемногу.',cost:14,tr:{blood:.5}},
-  {id:'bird',cat:'trans',name:'Перелётные птицы',desc:'Птицы перенесут заразу через границы и моря.',cost:18,tr:{bird:.4},sea:.5,air:.25},
+  {id:'air1',cat:'trans',at:[0,0],name:'Воздушно-капельный',desc:'Передаётся при кашле и разговоре. Лучше всего в богатых плотных странах.',cost:12,tr:{air:.8}},
+  {id:'air2',cat:'trans',at:[1,0],name:'Аэрозоль',desc:'Держится в воздухе часами.',cost:26,req:['air1'],tr:{air:.8}},
+  {id:'bird',cat:'trans',at:[2,0],name:'Перелётные птицы',desc:'Птицы перенесут заразу через границы и моря.',cost:18,req:['air2'],tr:{bird:.4},sea:.5,air:.25},
+  {id:'wat1',cat:'trans',at:[0,1],name:'Загрязнённая вода',desc:'Растёт в бедных регионах без очистки воды. Слаб в пустынях.',cost:12,tr:{water:.8}},
+  {id:'wat2',cat:'trans',at:[1,1],name:'Устойчивость в воде',desc:'Выживает в хлорированной воде.',cost:24,req:['wat1'],tr:{water:.7}},
+  {id:'ins',cat:'trans',at:[0,2],name:'Насекомые-переносчики',desc:'Комары и мухи. Сильно в жарком климате.',cost:14,tr:{insect:.9}},
+  {id:'rod',cat:'trans',at:[0,3],name:'Грызуны',desc:'Крысы в портах и трущобах. Открывает морские пути.',cost:12,tr:{rodent:.7}},
+  {id:'liv',cat:'trans',at:[1,3],name:'Скот',desc:'Передаётся от животных. Сильнее вне больших городов.',cost:12,req:['rod'],tr:{live:.6}},
+  {id:'blood',cat:'trans',at:[0,4],name:'Кровь',desc:'Через контакты с кровью. Работает везде понемногу.',cost:14,tr:{blood:.5}},
 
-  {id:'cough',cat:'symp',name:'Кашель',desc:'Заразнее, но заметнее.',cost:10,inf:.12,vis:.10,sev:.05},
-  {id:'sneeze',cat:'symp',name:'Чихание',desc:'Ещё больше частиц в воздухе.',cost:14,req:['cough'],inf:.18,vis:.10,sev:.03},
-  {id:'fever',cat:'symp',name:'Лихорадка',desc:'Повышает тяжесть и заметность.',cost:10,vis:.10,sev:.10},
-  {id:'nausea',cat:'symp',name:'Тошнота',desc:'Усиливает передачу через воду.',cost:10,inf:.08,vis:.08,sev:.05},
-  {id:'rash',cat:'symp',name:'Сыпь',desc:'Заразно при контакте, но бросается в глаза.',cost:12,inf:.10,vis:.14,sev:.05},
-  {id:'anem',cat:'symp',name:'Анемия',desc:'Первые смерти.',cost:16,req:['fever'],sev:.15,leth:.08,vis:.08},
-  {id:'pneu',cat:'symp',name:'Пневмония',desc:'Поражает лёгкие. Смертельна.',cost:24,req:['cough','fever'],sev:.2,leth:.18,vis:.15},
-  {id:'hem',cat:'symp',name:'Кровотечения',desc:'Очень смертельно и очень заметно.',cost:36,req:['anem'],sev:.4,leth:.38,vis:.30},
-  {id:'organ',cat:'symp',name:'Отказ органов',desc:'Массовая смертность.',cost:48,req:['pneu'],sev:.4,leth:.55,vis:.30},
-  {id:'coma',cat:'symp',name:'Кома',desc:'Почти неизбежный исход.',cost:62,req:['organ'],sev:.3,leth:.75,vis:.25},
+  {id:'cough',cat:'symp',at:[0,0],name:'Кашель',desc:'Заразнее, но заметнее.',cost:10,inf:.12,vis:.10,sev:.05},
+  {id:'sneeze',cat:'symp',at:[1,0],name:'Чихание',desc:'Ещё больше частиц в воздухе.',cost:14,req:['cough'],inf:.18,vis:.10,sev:.03},
+  {id:'fever',cat:'symp',at:[0,1],name:'Лихорадка',desc:'Повышает тяжесть и заметность.',cost:10,vis:.10,sev:.10},
+  {id:'anem',cat:'symp',at:[1,1],name:'Анемия',desc:'Первые смерти.',cost:16,req:['fever'],sev:.15,leth:.08,vis:.08},
+  {id:'hem',cat:'symp',at:[2,1],name:'Кровотечения',desc:'Очень смертельно и очень заметно.',cost:36,req:['anem'],sev:.4,leth:.38,vis:.30},
+  {id:'pneu',cat:'symp',at:[1,2],name:'Пневмония',desc:'Поражает лёгкие. Смертельна.',cost:24,req:['cough','fever'],sev:.2,leth:.18,vis:.15},
+  {id:'organ',cat:'symp',at:[2,2],name:'Отказ органов',desc:'Массовая смертность.',cost:48,req:['pneu'],sev:.4,leth:.55,vis:.30},
+  {id:'coma',cat:'symp',at:[3,2],name:'Кома',desc:'Почти неизбежный исход.',cost:62,req:['organ'],sev:.3,leth:.75,vis:.25},
+  {id:'nausea',cat:'symp',at:[0,3],name:'Тошнота',desc:'Усиливает передачу через воду.',cost:10,inf:.08,vis:.08,sev:.05},
+  {id:'rash',cat:'symp',at:[0,4],name:'Сыпь',desc:'Заразно при контакте, но бросается в глаза.',cost:12,inf:.10,vis:.14,sev:.05},
 
-  {id:'cold',cat:'abil',name:'Холодоустойчивость',desc:'Нормально заражает Скандинавию, Канаду, Сибирь.',cost:20,cold:1},
-  {id:'heat',cat:'abil',name:'Жароустойчивость',desc:'Нормально работает в пустынях и жарких странах.',cost:20,heat:1},
-  {id:'stealth',cat:'abil',name:'Маскировка симптомов',desc:'Заметность падает на 25%.',cost:30,stealth:.25},
-  {id:'drug1',cat:'abil',name:'Лекарственная устойчивость',desc:'Лекарство создаётся на 18% медленнее.',cost:30,drug:.18},
-  {id:'drug2',cat:'abil',name:'Генетическое упрочнение',desc:'Ещё −25% к скорости лекарства.',cost:52,req:['drug1'],drug:.25},
+  {id:'cold',cat:'abil',at:[0,0],name:'Холодоустойчивость',desc:'Нормально заражает Скандинавию, Канаду, Сибирь.',cost:20,cold:1},
+  {id:'heat',cat:'abil',at:[0,1],name:'Жароустойчивость',desc:'Нормально работает в пустынях и жарких странах.',cost:20,heat:1},
+  {id:'stealth',cat:'abil',at:[0,2],name:'Маскировка симптомов',desc:'Снижает заметность патогена.',cost:30,stealth:.25},
+  {id:'drug1',cat:'abil',at:[0,3],name:'Лекарственная устойчивость',desc:'Лекарство создаётся медленнее.',cost:30,drug:.18},
+  {id:'drug2',cat:'abil',at:[1,3],name:'Генетическое упрочнение',desc:'Ещё сильнее замедляет лекарство.',cost:52,req:['drug1'],drug:.25},
 ];
 const TR_BY = {}; TRAITS.forEach(t=>TR_BY[t.id]=t);
 
-/* ---------- Cure techs ---------- */
+/* ---------- Cure techs (5 levels each) ---------- */
 const TECHS = [
-  {id:'surv',cat:'detect',name:'Эпиднадзор',desc:'Видно заражённых во всех регионах. Раннее обнаружение патогена.',cost:26},
-  {id:'lab1',cat:'detect',name:'Лаборатория I',desc:'+30% к скорости разработки лекарства.',cost:22,mult:.30},
-  {id:'lab2',cat:'detect',name:'Лаборатория II',desc:'Ещё +30%.',cost:40,req:['lab1'],mult:.30},
-  {id:'lab3',cat:'detect',name:'Лаборатория III',desc:'Ещё +30%.',cost:64,req:['lab2'],mult:.30},
-  {id:'mrna',cat:'detect',name:'Платформа mRNA',desc:'+50% к скорости лекарства.',cost:62,req:['lab2'],mult:.50},
-  {id:'genom',cat:'detect',name:'Геномика',desc:'Мутации патогена откатывают лекарство вдвое меньше.',cost:38,req:['lab1'],genom:1},
+  {id:'surv',cat:'detect',at:[0,0],name:'Эпиднадзор',desc:'Видно заражённых во всех регионах. Раньше замечаем патоген.',cost:26,surv:1},
+  {id:'lab1',cat:'detect',at:[0,1],name:'Лаборатория',desc:'Ускоряет разработку лекарства.',cost:22,mult:.30},
+  {id:'lab2',cat:'detect',at:[1,1],name:'Научный центр',desc:'Ещё быстрее разработка.',cost:40,req:['lab1'],mult:.30},
+  {id:'lab3',cat:'detect',at:[2,1],name:'Квантовый кластер',desc:'Максимальная скорость науки.',cost:64,req:['lab2'],mult:.30},
+  {id:'genom',cat:'detect',at:[1,2],name:'Геномика',desc:'Мутации патогена откатывают лекарство слабее.',cost:38,req:['lab1'],genom:1},
+  {id:'mrna',cat:'detect',at:[2,2],name:'Платформа mRNA',desc:'Резкий рывок скорости лекарства.',cost:62,req:['lab2'],mult:.50},
 
-  {id:'hyg',cat:'contain',name:'Гигиена',desc:'−15% к бытовой передаче во всём мире.',cost:18,hyg:.15},
-  {id:'mask',cat:'contain',name:'Маски',desc:'−30% к воздушной передаче.',cost:24,req:['hyg'],air:.30},
-  {id:'sanit',cat:'contain',name:'Очистка воды',desc:'−40% к водной передаче.',cost:22,water:.40},
-  {id:'vec',cat:'contain',name:'Борьба с переносчиками',desc:'−40% к передаче через насекомых, грызунов и скот.',cost:22,vec:.40},
+  {id:'hyg',cat:'contain',at:[0,0],name:'Гигиена',desc:'Снижает бытовую передачу во всём мире.',cost:18,hyg:.15},
+  {id:'mask',cat:'contain',at:[1,0],name:'Маски',desc:'Снижает воздушную передачу.',cost:24,req:['hyg'],air:.30},
+  {id:'sanit',cat:'contain',at:[0,1],name:'Очистка воды',desc:'Снижает передачу через воду.',cost:22,water:.40},
+  {id:'vec',cat:'contain',at:[0,2],name:'Борьба с переносчиками',desc:'Снижает передачу через насекомых, грызунов и скот.',cost:22,vec:.40},
 
-  {id:'hosp',cat:'med',name:'Полевые госпитали',desc:'−25% смертности.',cost:30,hosp:.25},
-  {id:'antiv',cat:'med',name:'Противовирусные',desc:'Ещё −20% смертности и быстрее выздоровление.',cost:44,req:['hosp'],hosp:.20,rec:1},
-  {id:'fund1',cat:'med',name:'Гранты',desc:'+40% очков исследований.',cost:24,fund:.40},
-  {id:'fund2',cat:'med',name:'Экстренное финансирование',desc:'Ещё +40% очков исследований.',cost:42,req:['fund1'],fund:.40},
-  {id:'dist',cat:'med',name:'Логистика вакцинации',desc:'Лекарство раздаётся на 60% быстрее.',cost:36,dist:.60},
+  {id:'hosp',cat:'med',at:[0,0],name:'Полевые госпитали',desc:'Снижают смертность.',cost:30,hosp:.25},
+  {id:'antiv',cat:'med',at:[1,0],name:'Противовирусные',desc:'Ещё ниже смертность и быстрее выздоровление.',cost:44,req:['hosp'],hosp:.20,rec:1},
+  {id:'fund1',cat:'med',at:[0,1],name:'Гранты',desc:'Больше очков исследований.',cost:24,fund:.40},
+  {id:'fund2',cat:'med',at:[1,1],name:'Экстренное финансирование',desc:'Ещё больше очков исследований.',cost:42,req:['fund1'],fund:.40},
+  {id:'dist',cat:'med',at:[0,2],name:'Логистика вакцинации',desc:'Лекарство раздаётся быстрее.',cost:36,dist:.60},
 ];
 const TE_BY = {}; TECHS.forEach(t=>TE_BY[t.id]=t);
 
 const COST = {border:12, air:12, quar:18};
 const POWERS = {
-  shift:{name:'Антигенный сдвиг',cost:40,cd:120,desc:'Откатывает прогресс лекарства на 12%.'},
-  swarm:{name:'Суперраспространитель',cost:20,cd:25,desc:'+70% заразности в регионе на 30 дней.',region:true},
+  shift:{id:'shift',name:'Антигенный сдвиг',cost:40,cd:120,at:[0,0],desc:'Мутация сбивает прогресс лекарства.',up:[30,45,65,90]},
+  swarm:{id:'swarm',name:'Суперраспространитель',cost:20,cd:25,at:[0,1],desc:'Резко повышает заразность выбранного региона.',region:true,up:[20,30,45,65]},
 };
+function powerFx(id,L){
+  if(id==='shift') return {loss:12+3*(L-1),cd:120-8*(L-1)};
+  return {mult:1.7+.1*(L-1),dur:30+5*(L-1),cd:25-2*(L-1)};
+}
+
+const COLD_L=[.55,.7,.85,1,1.15];
 
 /* ---------- State ---------- */
 function newGame(){
   return {
-    v:1, day:0, phase:'setup', paused:false, winner:null, reason:'',
+    v:2, day:0, phase:'setup', paused:false, winner:null, reason:'',
     ptype:null, start:-1,
     rs: REG.map(d=>({H:d.pop,I:0,D:0,C:0,aw:0,border:0,air:0,quar:0,cov:0,ss:0,seen:0})),
-    path:{dna:16,traits:{},cd:{shift:0,swarm:0}},
+    path:{dna:16,traits:{},cd:{shift:0,swarm:0},pw:{shift:1,swarm:1}},
     cure:{rp:10,techs:{},prog:0,detected:0,done:0,doneDay:0},
+    combo:{path:{n:0,t:0},cure:{n:0,t:0}},
     bubbles:[], bid:0, ev:[], eid:0,
     tot:{H:TOTAL_POP,I:0,D:0,C:0,aw:0},
   };
 }
 function news(g,text,who,extra){ g.ev.push(Object.assign({id:++g.eid,day:g.day,who:who||'both',text},extra||{})); if(g.ev.length>50) g.ev.shift(); }
 
-function traitCost(g,t){
+function traitCost(g,t,L){
   const pt=PATHOGENS.find(p=>p.id===g.ptype); const m=pt?pt.cost[t.cat]:1;
-  return Math.max(1,Math.round(t.cost*m));
+  const lv=L!=null?L:((g.path.traits[t.id]||0)+1);
+  return Math.max(1,Math.round(t.cost*m*LV_COST[Math.min(MAXLV,lv)-1]));
+}
+function techCost(g,t,L){
+  const lv=L!=null?L:((g.cure.techs[t.id]||0)+1);
+  return Math.round(t.cost*LV_COST[Math.min(MAXLV,lv)-1]);
 }
 function pathStats(g){
   const pt=PATHOGENS.find(p=>p.id===g.ptype)||PATHOGENS[0];
   const S={inf:0,vis:0,sev:0,leth:0,tr:{contact:1,air:0,water:0,insect:0,rodent:0,live:0,blood:0,bird:0},sea:.15,air:.5,cold:0,heat:0,stealth:0,drug:0};
-  for(const id in g.path.traits){ const t=TR_BY[id]; if(!t) continue;
-    S.inf+=t.inf||0; S.vis+=t.vis||0; S.sev+=t.sev||0; S.leth+=t.leth||0;
-    if(t.tr) for(const k in t.tr) S.tr[k]+=t.tr[k];
-    if(t.sea) S.sea+=t.sea; if(t.air&&t.cat==='trans') S.air+=t.air;
-    if(t.cold) S.cold=1; if(t.heat) S.heat=1; if(t.stealth) S.stealth+=t.stealth; if(t.drug) S.drug+=t.drug;
+  for(const id in g.path.traits){ const t=TR_BY[id], L=g.path.traits[id]; if(!t||!L) continue; const sc=lvScale(L);
+    S.inf+=(t.inf||0)*sc; S.vis+=(t.vis||0)*sc; S.sev+=(t.sev||0)*sc; S.leth+=(t.leth||0)*sc;
+    if(t.tr) for(const k in t.tr) S.tr[k]+=t.tr[k]*sc;
+    if(t.sea) S.sea+=t.sea*sc; if(t.air&&t.cat==='trans') S.air+=t.air*sc;
+    if(t.cold) S.cold=Math.max(S.cold,COLD_L[L-1]); if(t.heat) S.heat=Math.max(S.heat,COLD_L[L-1]);
+    if(t.stealth) S.stealth+=t.stealth*sc; if(t.drug) S.drug+=t.drug*sc;
   }
+  S.stealth=Math.min(.7,S.stealth); S.drug=Math.min(.8,S.drug);
   S.infM=pt.inf*(1+S.inf); S.visM=Math.max(0,(0.12+S.vis)*pt.vis*(1-S.stealth));
   S.sea+= (S.tr.water*.35+S.tr.rodent*.6+S.tr.live*.3+S.tr.blood*.2);
   S.landM=1+S.tr.rodent*.3+S.tr.live*.3+S.tr.insect*.2;
   S.cureM=pt.cure; S.climHalf=pt.climHalf; S.pt=pt;
-  S.leth=Math.min(S.leth,1.8);
+  S.leth=Math.min(S.leth,2.6);
   return S;
 }
 function cureStats(g){
   const C={hyg:0,air:0,water:0,vec:0,hosp:0,rec:0,mult:1,fund:1,dist:1,genom:0,surv:0};
-  for(const id in g.cure.techs){ const t=TE_BY[id]; if(!t) continue;
-    C.hyg+=t.hyg||0; C.air+=t.air||0; C.water+=t.water||0; C.vec+=t.vec||0; C.hosp+=t.hosp||0;
-    C.rec+=t.rec||0; C.mult+=t.mult||0; C.fund+=t.fund||0; C.dist+=t.dist||0; C.genom+=t.genom||0; C.surv+=(id==='surv')?1:0;
+  for(const id in g.cure.techs){ const t=TE_BY[id], L=g.cure.techs[id]; if(!t||!L) continue; const sc=lvScale(L);
+    C.hyg+=(t.hyg||0)*sc; C.air+=(t.air||0)*sc; C.water+=(t.water||0)*sc; C.vec+=(t.vec||0)*sc; C.hosp+=(t.hosp||0)*sc;
+    C.rec+=(t.rec||0)*sc; C.mult+=(t.mult||0)*sc; C.fund+=(t.fund||0)*sc; C.dist+=(t.dist||0)*sc; C.genom+=(t.genom||0)*sc; if(t.surv) C.surv+=sc;
   }
+  C.hyg=Math.min(.55,C.hyg); C.air=Math.min(.8,C.air); C.water=Math.min(.85,C.water); C.vec=Math.min(.85,C.vec); C.hosp=Math.min(.8,C.hosp);
   let closed=0; for(const r of g.rs) closed+=(r.border?1:0)+(r.air?1:0)+(r.quar?1.5:0);
   C.closed=closed; C.econ=Math.max(.4,1-closed*.022);
   return C;
 }
 function climF(S,d){
   let k=1;
-  if(d.clim==='cold') k=S.cold?1:.5;
-  else if(d.clim==='hot') k=S.heat?1:.82;
-  else if(d.clim==='arid') k=S.heat?.95:.55;
+  if(d.clim==='cold') k=.5+.5*S.cold;
+  else if(d.clim==='hot') k=.82+.18*Math.min(1,S.heat);
+  else if(d.clim==='arid') k=.55+.4*Math.min(1,S.heat)+(S.heat>1?.12*(S.heat-1):0);
   if(S.climHalf) k=1-(1-k)*.5;
   return k;
 }
@@ -470,6 +581,42 @@ function fitOf(d){
   };
 }
 const FIT = REG.map(fitOf);
+
+/* ---------- Human-readable effects per level ---------- */
+const pc=v=>Math.round(v*100)+'%';
+function describe(kind,o,L){
+  const sc=lvScale(L), out=[];
+  const add=(label,val,good)=>out.push([label,val,good!==false]);
+  if(kind==='trait'){
+    if(o.tr){const nm={air:'Воздух',water:'Вода',insect:'Насекомые',rodent:'Грызуны',live:'Скот',blood:'Кровь',bird:'Птицы'};
+      for(const k in o.tr) add('Канал: '+nm[k], L?'+'+(o.tr[k]*sc).toFixed(2):'—');}
+    if(o.inf) add('Заразность',L?'+'+pc(o.inf*sc):'—');
+    if(o.sev) add('Тяжесть',L?'+'+pc(o.sev*sc):'—');
+    if(o.leth) add('Смертность',L?'+'+pc(o.leth*sc):'—');
+    if(o.vis) add('Заметность',L?'+'+pc(o.vis*sc):'—',false);
+    if(o.stealth) add('Заметность',L?'−'+pc(Math.min(.7,o.stealth*sc)):'—');
+    if(o.drug) add('Скорость лекарства',L?'−'+pc(o.drug*sc):'—');
+    if(o.cold||o.heat) add('Адаптация к климату',L?pc(COLD_L[L-1]):'—');
+    if(o.sea) add('Морские пути',L?'+'+(o.sea*sc).toFixed(2):'—');
+  } else if(kind==='tech'){
+    if(o.hyg) add('Бытовая передача',L?'−'+pc(o.hyg*sc):'—');
+    if(o.air) add('Воздушная передача',L?'−'+pc(o.air*sc):'—');
+    if(o.water) add('Водная передача',L?'−'+pc(o.water*sc):'—');
+    if(o.vec) add('Переносчики',L?'−'+pc(o.vec*sc):'—');
+    if(o.hosp) add('Смертность',L?'−'+pc(o.hosp*sc):'—');
+    if(o.rec) add('Выздоровление',L?'+'+pc(1.5*o.rec*sc):'—');
+    if(o.mult) add('Скорость науки',L?'+'+pc(o.mult*sc):'—');
+    if(o.fund) add('Очки исследований',L?'+'+pc(o.fund*sc):'—');
+    if(o.dist) add('Скорость вакцинации',L?'+'+pc(o.dist*sc):'—');
+    if(o.genom) add('Откат от мутаций',L?'−'+pc(Math.min(.8,.5*o.genom*sc)):'—');
+    if(o.surv) add('Порог обнаружения',L?(0.6/Math.pow(Math.max(1,sc),1.2)).toFixed(2)+' млрд':'—');
+  } else if(kind==='power'){
+    const f=powerFx(o.id,Math.max(1,L));
+    if(o.id==='shift'){add('Откат лекарства','−'+f.loss+'%');add('Перезарядка',f.cd+' дн.',false)}
+    else{add('Заразность региона','+'+Math.round((f.mult-1)*100)+'%');add('Длительность',f.dur+' дн.');add('Перезарядка',f.cd+' дн.',false)}
+  }
+  return out;
+}
 
 function seed(g,from,to,mode){
   const r=g.rs[to];
@@ -491,6 +638,7 @@ function step(g){
   const rs=g.rs;
   let tH=0,tI=0,tD=0,tC=0,awN=0;
   const done=g.cure.done;
+  const swarmF=powerFx('swarm',g.path.pw.swarm);
   for(let i=0;i<rs.length;i++){
     const r=rs[i], d=REG[i], N=d.pop, f=r.I/N;
     if(r.ss>0) r.ss--;
@@ -503,7 +651,7 @@ function step(g){
         + S.tr.blood*F.blood + S.tr.bird*F.bird;
       let beta=S.infM*0.88*(0.02+0.05*fit)*climF(S,d);
       if(r.quar) beta*=.35;
-      if(r.ss>0) beta*=1.7;
+      if(r.ss>0) beta*=swarmF.mult;
       beta=Math.min(beta,.5);
       let newI=Math.min(r.H, beta*r.I*(r.H/N));
       let dead=r.I*S.leth*LETH_K*(1-Math.min(.8,C.hosp));
@@ -518,7 +666,6 @@ function step(g){
       const v=r.H*.02*r.cov; r.H-=v; r.C+=v;
     }
     if(done && r.cov<1) r.cov=Math.min(1,r.cov+(0.012+0.02*d.wealth)*C.dist);
-    // awareness
     const sym=f*S.visM*7 + (r.D/N)*45;
     if(sym>0.0008) r.aw=Math.min(1,r.aw+sym*.06);
     tH+=r.H; tI+=r.I; tD+=r.D; tC+=r.C; awN+=r.aw*N;
@@ -526,7 +673,6 @@ function step(g){
   g.tot={H:tH,I:tI,D:tD,C:tC,aw:awN/TOTAL_POP};
   for(let i=0;i<rs.length;i++){ const r=rs[i]; const t=g.tot.aw*.7; if(r.aw<t) r.aw=Math.min(t,r.aw+.02); }
 
-  // spread between regions
   for(let i=0;i<rs.length;i++){
     const r=rs[i]; const f=r.I/REG[i].pop;
     if(f<=0.0003) continue;
@@ -544,16 +690,15 @@ function step(g){
     }
   }
 
-  // income & bubbles
-  g.path.dna+=.1;
-  g.cure.rp+=.12*C.fund*C.econ - Math.min(.05,C.closed*.004);
+  g.path.dna+=.12;
+  g.cure.rp+=.14*C.fund*C.econ - Math.min(.05,C.closed*.004);
   if(g.cure.rp<0) g.cure.rp=0;
   let pb=0,cb=0; for(const b of g.bubbles){ if(b.role==='path') pb++; else cb++; b.ttl--; }
   g.bubbles=g.bubbles.filter(b=>b.ttl>0);
   if(pb<6){
     for(let i=0;i<rs.length;i++){
       if(rs[i].I/REG[i].pop>.0004 && Math.random()<.02){
-        g.bubbles.push({id:++g.bid,role:'path',r:i,v:2+Math.round(REG[i].pop/500)+(Math.random()<.2?2:0),ttl:30}); pb++; if(pb>=6) break;
+        g.bubbles.push({id:++g.bid,role:'path',r:i,v:2+Math.round(REG[i].pop/450)+(Math.random()<.2?3:0),ttl:26}); pb++; if(pb>=6) break;
       }
     }
   }
@@ -561,18 +706,17 @@ function step(g){
     for(let i=0;i<rs.length;i++){
       const ok=rs[i].aw>.06||(!g.cure.detected&&Math.random()<.2&&REG[i].wealth>.8);
       if(ok && Math.random()<(rs[i].aw>.06?.02:.0012)){
-        g.bubbles.push({id:++g.bid,role:'cure',r:i,v:2+Math.round(REG[i].wealth*3),ttl:30}); cb++; if(cb>=6) break;
+        g.bubbles.push({id:++g.bid,role:'cure',r:i,v:3+Math.round(REG[i].wealth*3),ttl:26}); cb++; if(cb>=6) break;
       }
     }
   }
 
-  // detection
   if(!g.cure.detected){
-    if(g.tot.aw>.012 || (C.surv && g.tot.I>.6) || g.tot.D>.5){
+    const thr=.6/Math.max(1,Math.pow(Math.max(1,C.surv),1.2));
+    if(g.tot.aw>.012 || (C.surv>0 && g.tot.I>thr) || g.tot.D>.5){
       g.cure.detected=1; news(g,'Обнаружен неизвестный патоген. Начата разработка лекарства.','both');
     }
   }
-  // cure research
   if(g.cure.detected && !done){
     const cap=.5+.9*Math.min(1,g.tot.aw*1.6);
     const res=Math.max(.15,1-S.drug)*S.cureM;
@@ -582,13 +726,11 @@ function step(g){
     for(const m of [25,50,75]) if(before<m&&g.cure.prog>=m) news(g,'Лекарство: готовность '+m+'%','both');
     if(g.cure.prog>=100){ g.cure.done=1; g.cure.doneDay=g.day; news(g,'Лекарство готово! Начата вакцинация.','both'); }
   }
-  // region milestone news
   for(let i=0;i<rs.length;i++){
     const r=rs[i]; if(!r.seen && r.aw>.08 && r.I>0){ r.seen=1; news(g,'Вспышка неизвестной болезни: '+REG[i].name,'both'); }
   }
   for(const k in g.path.cd) if(g.path.cd[k]>0) g.path.cd[k]--;
 
-  // victory
   const living=g.tot.H+g.tot.I+g.tot.C;
   if(living<TOTAL_POP*.02){ g.phase='over'; g.winner='path'; g.reason='Человечество почти уничтожено.'; }
   else if(done && g.tot.I<.0004){ g.phase='over'; g.winner='cure'; g.reason='Лекарство победило: заражённых не осталось.'; }
@@ -612,33 +754,44 @@ function act(g,role,a){
   if(a.k==='collect'){
     const b=g.bubbles.find(x=>x.id===a.id&&x.role===role); if(!b) return err('Пузырь пропал');
     g.bubbles=g.bubbles.filter(x=>x!==b);
-    if(role==='path') g.path.dna+=b.v; else g.cure.rp+=b.v;
-    return {ok:true,v:b.v};
+    const now=g.clock!=null?g.clock:Date.now(); const c=g.combo[role];
+    c.n=(now-c.t<2600)?Math.min(c.n+1,10):1; c.t=now;
+    const v=Math.round(b.v*(1+.08*(c.n-1)));
+    if(role==='path') g.path.dna+=v; else g.cure.rp+=v;
+    return {ok:true,v,combo:c.n};
   }
   if(a.k==='buy'){
     if(role==='path'){
-      const t=TR_BY[a.id]; if(!t) return err('?'); if(g.path.traits[t.id]) return err('Уже куплено');
+      const t=TR_BY[a.id]; if(!t) return err('?'); const lv=g.path.traits[t.id]||0;
+      if(lv>=MAXLV) return err('Максимальный уровень');
       if(t.req && !t.req.every(x=>g.path.traits[x])) return err('Нужно: '+t.req.map(x=>TR_BY[x].name).join(', '));
-      const c=traitCost(g,t); if(g.path.dna<c) return err('Не хватает ДНК');
-      g.path.dna-=c; g.path.traits[t.id]=1; return {ok:true};
+      const c=traitCost(g,t,lv+1); if(g.path.dna<c) return err('Не хватает ДНК');
+      g.path.dna-=c; g.path.traits[t.id]=lv+1; return {ok:true,lv:lv+1};
     } else {
-      const t=TE_BY[a.id]; if(!t) return err('?'); if(g.cure.techs[t.id]) return err('Уже изучено');
+      const t=TE_BY[a.id]; if(!t) return err('?'); const lv=g.cure.techs[t.id]||0;
+      if(lv>=MAXLV) return err('Максимальный уровень');
       if(t.req && !t.req.every(x=>g.cure.techs[x])) return err('Нужно: '+t.req.map(x=>TE_BY[x].name).join(', '));
-      if(g.cure.rp<t.cost) return err('Не хватает очков'); g.cure.rp-=t.cost; g.cure.techs[t.id]=1; return {ok:true};
+      const c=techCost(g,t,lv+1); if(g.cure.rp<c) return err('Не хватает очков'); g.cure.rp-=c; g.cure.techs[t.id]=lv+1; return {ok:true,lv:lv+1};
     }
   }
+  if(a.k==='pwup' && role==='path'){
+    const p=POWERS[a.id]; if(!p) return err('?'); const L=g.path.pw[a.id];
+    if(L>=MAXLV) return err('Максимальный уровень');
+    const c=p.up[L-1]; if(g.path.dna<c) return err('Не хватает ДНК');
+    g.path.dna-=c; g.path.pw[a.id]=L+1; return {ok:true,lv:L+1};
+  }
   if(a.k==='power' && role==='path'){
-    const p=POWERS[a.id]; if(!p) return err('?');
+    const p=POWERS[a.id]; if(!p) return err('?'); const L=g.path.pw[a.id], fx=powerFx(a.id,L);
     if(g.path.cd[a.id]>0) return err('Перезарядка: '+g.path.cd[a.id]+' дн.');
     if(g.path.dna<p.cost) return err('Не хватает ДНК');
     if(a.id==='shift'){
       if(!g.cure.detected||g.cure.done) return err('Сейчас бесполезно');
-      const C=cureStats(g); g.cure.prog=Math.max(0,g.cure.prog-(C.genom?6:12));
+      const C=cureStats(g); const gf=Math.max(.2,1-.5*C.genom); g.cure.prog=Math.max(0,g.cure.prog-fx.loss*gf);
       news(g,'Патоген мутировал: прогресс лекарства откатился.','both');
     } else {
-      const r=g.rs[a.r]; if(!r||r.I<=0) return err('Нужен заражённый регион'); r.ss=30;
+      const r=g.rs[a.r]; if(!r||r.I<=0) return err('Нужен заражённый регион'); r.ss=fx.dur;
     }
-    g.path.dna-=p.cost; g.path.cd[a.id]=p.cd; return {ok:true};
+    g.path.dna-=p.cost; g.path.cd[a.id]=fx.cd; return {ok:true};
   }
   if(a.k==='toggle' && role==='cure'){
     const r=g.rs[a.r]; if(!r) return err('Регион?'); const w=a.what; if(!(w in COST)) return err('?');
@@ -659,23 +812,20 @@ function botStep(g,role,skill){
   if(g.phase!=='run'||g.paused) return;
   if(role==='path'){
     for(const b of g.bubbles.filter(b=>b.role==='path')) if(Math.random()<.22*skill+.05) act(g,'path',{k:'collect',id:b.id});
-    // delay symptoms until well spread
     const infReg=g.rs.filter(r=>r.I>0).length;
-    for(const id of PATH_ORDER){
-      const t=TR_BY[id]; if(g.path.traits[id]) continue;
+    outer: for(let pass=1;pass<=MAXLV;pass++) for(const id of PATH_ORDER){
+      const t=TR_BY[id]; if((g.path.traits[id]||0)>=pass) continue;
       if(t.cat==='symp' && (t.leth||0)>0 && infReg<12 && g.tot.I<g.tot.H*.35) continue;
       if(t.cat==='symp' && id==='fever' && infReg<8) continue;
       if(t.req&&!t.req.every(x=>g.path.traits[x])) continue;
-      if(act(g,'path',{k:'buy',id}).ok) {}
-      break; // save up for the next one in order
+      act(g,'path',{k:'buy',id}); break outer;
     }
     if(g.cure.detected&&!g.cure.done&&g.cure.prog>45&&Math.random()<.3*skill) act(g,'path',{k:'power',id:'shift'});
     if(Math.random()<.04*skill){ const best=g.rs.map((r,i)=>[r.I,i]).sort((a,b)=>b[0]-a[0])[0]; if(best&&best[0]>0) act(g,'path',{k:'power',id:'swarm',r:best[1]}); }
   } else {
     for(const b of g.bubbles.filter(b=>b.role==='cure')) if(Math.random()<.22*skill+.05) act(g,'cure',{k:'collect',id:b.id});
-    for(const id of CURE_ORDER){ if(g.cure.techs[id]) continue; const t=TE_BY[id]; if(t.req&&!t.req.every(x=>g.cure.techs[x])) continue; act(g,'cure',{k:'buy',id}); break; }
+    outer2: for(let pass=1;pass<=MAXLV;pass++) for(const id of CURE_ORDER){ const t=TE_BY[id]; if((g.cure.techs[id]||0)>=pass) continue; if(t.req&&!t.req.every(x=>g.cure.techs[x])) continue; act(g,'cure',{k:'buy',id}); break outer2; }
     if(g.cure.detected && Math.random()<.35*skill){
-      // seal risky regions: closed borders/air for regions with >0.5% infected, quarantine for >5%
       const open=g.rs.map((r,i)=>[r.I/REG[i].pop,i,r]).filter(x=>x[0]>.005).sort((a,b)=>b[0]-a[0]);
       for(const [f,i,r] of open){
         if(!r.border && g.cure.rp>=COST.border+8){ act(g,'cure',{k:'toggle',what:'border',r:i}); break; }
@@ -686,7 +836,7 @@ function botStep(g,role,skill){
   }
 }
 
-const ENGINE={TICK_MS,REG,PATHOGENS,TRAITS,TECHS,POWERS,COST,TOTAL_POP,ADJ,SEA,AIRL,LAND,TR_BY,TE_BY,newGame,step,act,botStep,pathStats,cureStats,traitCost,IDX};
+const ENGINE={TICK_MS,MAXLV,LV_COST,lvScale,REG,PATHOGENS,TRAITS,TECHS,POWERS,powerFx,describe,COST,TOTAL_POP,ADJ,SEA,AIRL,LAND,TR_BY,TE_BY,newGame,step,act,botStep,pathStats,cureStats,traitCost,techCost,IDX};
 if(typeof module!=='undefined') module.exports=ENGINE;
 
 </script>
@@ -712,7 +862,6 @@ const sfx={collect:()=>beep(880,.1,'triangle',.06,1320),buy:()=>{beep(520,.08,'s
 $('#mutebtn').onclick=()=>{muted=!muted;$('#mutebtn').style.opacity=muted?.4:1};
 
 function toast(m,err){const t=document.createElement('div');t.className='toast'+(err?' err':'');t.textContent=m;$('#toasts').appendChild(t);if(err)sfx.err();setTimeout(()=>t.remove(),2600)}
-
 /* ================= networking ================= */
 class Net{constructor(){this.h={}}on(e,f){this.h[e]=f;return this}emit(e,a){this.h[e]&&this.h[e](a)}}
 class PeerNet extends Net{
@@ -871,47 +1020,229 @@ function doAct(a){
 function fmt(m){if(m>=1000)return (m/1000).toFixed(2)+' млрд';if(m>=1)return (m>=100?Math.round(m):m.toFixed(1))+' млн';return Math.round(m*1000)+' тыс'}
 const CL={cold:'холодный',temp:'умеренный',hot:'жаркий',arid:'засушливый'};
 function known(i){if(ME.role==='path')return true;if(!G.cure.detected)return false;return !!G.cure.techs.surv||G.rs[i].aw>.05}
+/* ================= icons ================= */
+const S=(b,w)=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+(w||1.8)+'" stroke-linecap="round" stroke-linejoin="round">'+b+'</svg>';
+const DROP='M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z';
+const DNA_D='M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9M9 7h6M9 17h6';
+const FLASK_D='M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8';
+const BUGS='<ellipse cx="12" cy="14" rx="3.5" ry="5"/><path d="M12 9V6M10 4l2 2 2-2M8.5 12L4 10m4.5 4L4 15m11.5-3L20 10m-4.5 4l4.5 1"/>';
+const SHIELD='M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z';
+const IC={
+ air1:S('<path d="M3 9h10a3 3 0 1 0-3-3"/><path d="M3 14h14a3 3 0 1 1-3 3"/>'),
+ air2:S('<circle cx="7" cy="8" r="2"/><circle cx="16" cy="6" r="1.5"/><circle cx="12" cy="13" r="3"/><circle cx="18" cy="16" r="2"/><circle cx="6" cy="17" r="1.5"/>'),
+ bird:S('<path d="M2 11c3-6 7-6 10 0 3-6 7-6 10 0"/><path d="M12 11v8l-2 2m2-2l2 2"/>'),
+ wat1:S('<path d="'+DROP+'"/><path d="M8.5 15c1.2-1 2.3 1 3.5 0s2.300 1 3.500 0"/>'),
+ wat2:S('<path d="'+DROP+'"/><path d="M9 14l2 2 4-4"/>'),
+ ins:S(BUGS),
+ rod:S('<path d="M3 17c0-4 4-7 9-7 3 0 4 2 4 2l4-1-1 3c1 1 1 3-1 4H5c-1 0-2-.5-2-1z"/><circle cx="15" cy="13" r=".6" fill="currentColor"/><path d="M3 17c-1 1-1 3 1 3"/>'),
+ liv:S('<path d="M5 8C3 8 2 7 2 5m17 3c2 0 3-1 3-3M6 8h12v6a6 6 0 0 1-12 0z"/><circle cx="10" cy="12" r=".8" fill="currentColor"/><circle cx="14" cy="12" r=".8" fill="currentColor"/><path d="M10 17h4"/>'),
+ blood:S('<path d="'+DROP+'" fill="currentColor" fill-opacity=".3"/><path d="M12 11v5M9.500 13.500h5"/>'),
+ cough:S('<circle cx="7" cy="12" r="3"/><path d="M13 9l7-2M13 12h8M13 15l7 2"/>'),
+ sneeze:S('<path d="M12 3v4M5 6l3 3M19 6l-3 3M3 13h5m8 0h5M7 20l3-4m7 4l-3-4"/><circle cx="12" cy="13" r="1.5"/>'),
+ fever:S('<path d="M10 4a2 2 0 0 1 4 0v9a4 4 0 1 1-4 0z"/><path d="M12 9v7"/>'),
+ anem:S('<path d="'+DROP+'"/><path d="M9 15h6"/>'),
+ hem:S('<path d="M8 4c2 3 3 5 3 7a3 3 0 0 1-6 0c0-2 1-4 3-7zM17 10c1.500 2 2 3.500 2 5a2.500 2.500 0 0 1-5 0c0-1.500.5-3 3-5z"/>'),
+ pneu:S('<path d="M12 4v9m0 0c0 3-2 7-5 7-2 0-3-2-3-4 0-4 2-8 4-9 2-1 4 0 4 1zm0 0c0 3 2 7 5 7 2 0 3-2 3-4 0-4-2-8-4-9-2-1-4 0-4 1z"/>'),
+ organ:S('<path d="M12 20s-8-5-8-11a4.500 4.500 0 0 1 8-2.500A4.500 4.500 0 0 1 20 9c0 6-8 11-8 11z"/><path d="M12 7l-2 4 3 1-2 4"/>'),
+ coma:S('<path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10z"/><path d="M15 3h4l-4 4h4"/>'),
+ nausea:S('<circle cx="12" cy="12" r="9"/><path d="M8 15c1-1 2 1 4 0s2 1 4 0M9 9.500h.01M15 9.500h.01"/>'),
+ rash:S('<circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="10" r="1"/><circle cx="11" cy="15" r="1"/><circle cx="16" cy="15" r="1"/>'),
+ cold:S('<path d="M12 3v18M4 7.500l16 9M4 16.500l16-9M9.500 4.500L12 7l2.500-2.500M9.500 19.500L12 17l2.500 2.500"/>'),
+ heat:S('<circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M19 5l-2 2M7 17l-2 2"/>'),
+ stealth:S('<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 20L20 4"/>'),
+ drug1:S('<rect x="2.500" y="8.500" width="19" height="7" rx="3.500" transform="rotate(-40 12 12)"/><path d="M12 8.500v7" transform="rotate(-40 12 12)"/>'),
+ drug2:S('<path d="'+SHIELD+'"/><path d="M9 12l2 2 4-4"/>'),
+ surv:S('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.500"/><path d="M12 12l6-6"/>'),
+ lab1:S('<path d="'+FLASK_D+'"/>'),
+ lab2:S('<ellipse cx="12" cy="12" rx="9" ry="3.500"/><ellipse cx="12" cy="12" rx="9" ry="3.500" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.500" transform="rotate(120 12 12)"/>',1.5),
+ lab3:S('<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3"/>'),
+ genom:S('<path d="'+DNA_D+'"/>'),
+ mrna:S('<path d="M18 3l3 3M15 6l3 3M4 20l1-4 10-10 3 3-10 10zM9 15l-2-2"/>'),
+ hyg:S('<path d="M12 3l1.800 5.200L19 10l-5.200 1.800L12 17l-1.800-5.200L5 10l5.200-1.800z"/><path d="M19 17l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>'),
+ mask:S('<path d="M3 9c3-2 15-2 18 0v3c0 4-4 7-9 7s-9-3-9-7z"/><path d="M8 12h8M8 15h8"/>'),
+ sanit:S('<path d="M4 8h10a4 4 0 0 1 4 4M9 8V4h4"/><path d="M18 15c1 1.500 1.500 2.500 1.500 3.500a1.500 1.500 0 0 1-3 0c0-1 .5-2 1.500-3.500z"/>'),
+ vec:S(BUGS+'<path d="M3 3l18 18"/>'),
+ hosp:S('<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/>'),
+ antiv:S('<path d="'+SHIELD+'"/><path d="M12 8v6M9 11h6"/>'),
+ fund1:S('<circle cx="12" cy="12" r="9"/><path d="M14.500 9c-.5-1-1.500-1.500-2.500-1.500-1.500 0-2.500.8-2.500 2 0 3 5 1.500 5 4.500 0 1.200-1 2-2.500 2-1.200 0-2.200-.6-2.700-1.600M12 6v1.500m0 9V18"/>'),
+ fund2:S('<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>'),
+ dist:S('<path d="M2 6h12v10H2zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.500" r="1.800"/><circle cx="17" cy="17.500" r="1.800"/>'),
+ shift:S('<path d="M4 8h13l-3-3M20 16H7l3 3"/>'),
+ swarm:S('<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="2 3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/>'),
+ virus:S('<circle cx="12" cy="12" r="5"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="2" r=".8"/><circle cx="12" cy="22" r=".8"/><circle cx="2" cy="12" r=".8"/><circle cx="22" cy="12" r=".8"/>'),
+ bact:S('<rect x="4" y="8" width="16" height="8" rx="4"/><path d="M8 5v3m4-3v3m4-3v3M8 16v3m4-3v3m4-3v3"/>'),
+ fungus:S('<path d="M3 12a9 8 0 0 1 18 0z"/><path d="M10 12v7a2 2 0 0 0 4 0v-7"/>'),
+ para:S('<path d="M5 19c-2-4 2-6 4-4s4 0 4-4 4-4 6-6"/><circle cx="19" cy="5" r="1.500"/>'),
+ dna:S('<path d="'+DNA_D+'"/>'),
+ flask:S('<path d="'+FLASK_D+'"/>'),
+ pause:S('<path d="M8 5v14M16 5v14" stroke-width="2.600"/>'),
+ play:S('<path d="M7 4l13 8-13 8z" fill="currentColor"/>'),
+ sound:S('<path d="M4 9v6h4l5 4V5L8 9zM16 9c1.500 1.500 1.500 4.500 0 6M18.500 6.500c3 3 3 8 0 11"/>'),
+ border:S('<path d="M5 3v18M5 5h14l-3 4 3 4H5"/>'),
+ plane:S('<path d="M21 3L3 11l7 3 3 7zM10 14l5-5"/>'),
+ quar:S('<circle cx="12" cy="12" r="9"/><path d="M12 7v5m0 3v.01"/><path d="M6 6l12 12" stroke-opacity=".5"/>'),
+ lock:S('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+ bolt:S('<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>'),
+ star:S('<path d="M12 3l2.700 5.600 6.100.9-4.400 4.300 1 6.100L12 17l-5.400 2.900 1-6.100L3.200 9.500l6.100-.9z"/>'),
+ trans:S('<circle cx="6" cy="12" r="2.500"/><circle cx="18" cy="6" r="2.500"/><circle cx="18" cy="18" r="2.500"/><path d="M8.200 11l7.600-4M8.200 13l7.600 4"/>'),
+ globe:S('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>'),
+ up:S('<path d="M12 19V5M6 11l6-6 6 6"/>'),
+ check:S('<path d="M5 12l5 5 9-10"/>')
+};
+const CATCOL={trans:'#ff9f43',symp:'#ff4d6d',abil:'#b388ff',pow:'#ffd24d',detect:'#4cc9f0',contain:'#36f1cd',med:'#7cf29a',reg:'#ffb020'};
+const CATICON={trans:'trans',symp:'fever',abil:'star',pow:'bolt',detect:'lab2',contain:'mask',med:'hosp',reg:'globe'};
 
 /* ================= UI updates ================= */
+const MAXLV=E.MAXLV, ic=id=>IC[id]||'';
+let selNode=null, lastComboT=0, comboAt=0, comboN=0, lastRes=null;
 function onState(){
   if(!G||!started)return;
-  // fx events
   for(const e of G.ev){ if(e.id>lastEv){ lastEv=e.id;
     if(e.a!=null&&e.b!=null&&(ME.role==='path'||known(e.a)||known(e.b))) fx.push({a:e.a,b:e.b,mode:e.mode,t0:performance.now()});
     if(e.who!=='fx'&&(e.who==='both'||e.who===ME.role)){ if(G.day>0) sfx.news(); newsAdd(e); } } }
+  const cc=G.combo&&G.combo[ME.role];
+  if(cc&&cc.t!==lastComboT){lastComboT=cc.t;comboAt=performance.now();comboN=cc.n}
+  const su=G.phase==='setup'&&ME.role==='path';if(document.body.classList.contains('setup')!==su){document.body.classList.toggle('setup',su);layout()}
   updateTop();updatePanel();updateRC();updateOverlays();
   $('#pausebanner').classList.toggle('hidden',!(G.paused&&G.phase==='run'));
-  $('#pausebtn').textContent=G.paused?'▶':'❚❚';
+  $('#pausebtn').innerHTML=ic(G.paused?'play':'pause');
 }
+setInterval(()=>{const el=$('#combo');if(!el)return;const on=comboN>1&&performance.now()-comboAt<2600;el.classList.toggle('on',on);if(on)el.textContent='×'+comboN+' КОМБО'},150);
+$('#pausebtn').innerHTML=ic('pause');$('#mutebtn').innerHTML=ic('sound');$('#ri').innerHTML=ic('virus');$('#rc2').innerHTML=ic('flask');
 const newsList=[];
 function newsAdd(e){newsList.push(e);if(newsList.length>3)newsList.shift();renderNews()}
 function renderNews(){const t=$('#ticker');t.innerHTML='';newsList.forEach((e,i)=>{const d=document.createElement('div');d.className='news'+(i===newsList.length-1?' fresh':'');d.innerHTML='<b>Д'+e.day+'</b>'+e.text;t.appendChild(d)})}
 
+function ring(id,frac){$(id).style.strokeDashoffset=119.4*(1-Math.max(0,Math.min(1,frac)))}
 function updateTop(){
   const t=G.tot;$('#day').textContent=G.day;
-  const vis=ME.role==='path'||G.cure.detected;
   if(ME.role==='cure'&&!G.cure.detected){
     for(const k of['H','I','D','C'])$('#n'+k).textContent=k==='H'?fmt(TOTAL_POP):'—';
     $('#bH').style.width='100%';for(const k of['I','D','C'])$('#b'+k).style.width='0%';
+    ring('#iring',0);$('#ipct').textContent='—';
   } else {
     let H=t.H,I=t.I,D=t.D,C=t.C,pre='';
     if(ME.role==='cure'&&!G.cure.techs.surv){H=I=D=C=0;pre='≥';for(let i=0;i<REG.length;i++)if(known(i)){I+=G.rs[i].I;D+=G.rs[i].D;C+=G.rs[i].C}H=TOTAL_POP-I-D-C}
     $('#nH').textContent=fmt(H);$('#nI').textContent=pre+fmt(I);$('#nD').textContent=pre+fmt(D);$('#nC').textContent=fmt(C);
     $('#bH').style.width=H/TOTAL_POP*100+'%';$('#bI').style.width=I/TOTAL_POP*100+'%';$('#bD').style.width=D/TOTAL_POP*100+'%';$('#bC').style.width=C/TOTAL_POP*100+'%';
+    const f=(I+D)/TOTAL_POP;ring('#iring',f);$('#ipct').textContent=Math.round(f*100)+'%';
   }
   const p=G.cure.detected?G.cure.prog:0;
-  $('#cpct').textContent=G.cure.detected?Math.floor(p)+'%':'—';$('#cfill').style.width=p+'%';
+  $('#cpct').textContent=G.cure.detected?Math.floor(p)+'%':'—';ring('#cring',p/100);
 }
 
 /* ---------- side panel ---------- */
-const PTABS=[['trans','Передача'],['symp','Симптомы'],['abil','Способности'],['pow','Силы']];
+const PTABS=[['trans','Передача'],['symp','Симптомы'],['abil','Адаптация'],['pow','Силы']];
 const CTABS=[['detect','Наука'],['contain','Меры'],['med','Медицина'],['reg','Регионы']];
-let lastRes=null;
+const CATNAME={trans:'ПЕРЕДАЧА',symp:'СИМПТОМЫ',abil:'АДАПТАЦИЯ',pow:'СИЛЫ',detect:'НАУКА',contain:'МЕРЫ',med:'МЕДИЦИНА'};
+const GX=92,GY=98,PX=36,PY=46;
+function tabItems(){
+  if(ME.role==='path'){
+    if(tab==='pow')return Object.values(POWERS).map(o=>({kind:'power',o}));
+    return TRAITS.filter(t=>t.cat===tab).map(o=>({kind:'trait',o}));
+  }
+  return TECHS.filter(t=>t.cat===tab).map(o=>({kind:'tech',o}));
+}
+function nInfo(kind,o){
+  let lv,cost,res;
+  if(kind==='trait'){lv=G.path.traits[o.id]||0;res=G.path.dna;cost=lv>=MAXLV?0:E.traitCost(G,o)}
+  else if(kind==='tech'){lv=G.cure.techs[o.id]||0;res=G.cure.rp;cost=lv>=MAXLV?0:E.techCost(G,o)}
+  else{lv=G.path.pw[o.id];res=G.path.dna;cost=lv>=MAXLV?0:o.up[lv-1]}
+  const have=kind==='trait'?G.path.traits:G.cure.techs,reqs=o.req||[];
+  const lock=kind!=='power'&&reqs.some(x=>!have[x]);
+  const by=kind==='trait'?E.TR_BY:E.TE_BY;
+  return {lv,cost,res,lock,max:lv>=MAXLV,can:!lock&&lv<MAXLV&&res>=cost&&G.phase==='run',reqNames:kind==='power'?[]:reqs.filter(x=>!have[x]).map(x=>by[x].name)};
+}
+function lvOf(kind,id){return kind==='trait'?(G.path.traits[id]||0):kind==='tech'?(G.cure.techs[id]||0):G.path.pw[id]}
+function buildPanel(key){
+  builtKey=key;const path=ME.role==='path';
+  $('#meters').innerHTML='';
+  const tabs=path?PTABS:CTABS;
+  if(!tab||!tabs.find(x=>x[0]===tab))tab=tabs[0][0];
+  $('#resl').textContent=path?'ДНК':'Очки науки';
+  $('#resico').innerHTML=ic(path?'dna':'flask');
+  $('#pico').innerHTML=ic(path?(PATHOGENS.find(p=>p.id===G.ptype)||{icon:'virus'}).icon:'hosp');
+  $('#ptabs').innerHTML='';
+  tabs.forEach(([id,name])=>{const b=document.createElement('button');b.style.setProperty('--tc',CATCOL[id]);b.className=id===tab?'on':'';b.dataset.tab=id;b.innerHTML=ic(CATICON[id])+'<span>'+name+'</span>';
+    b.onclick=()=>{tab=id;selNode=null;buildPanel(builtKey);updatePanel();$('#treewrap').scrollTop=0};$('#ptabs').appendChild(b)});
+  const isReg=tab==='reg';
+  $('#treewrap').classList.toggle('hidden',isReg);$('#insp').classList.toggle('hidden',isReg);$('#list').classList.toggle('hidden',!isReg);
+  if(isReg){buildRegions();return}
+  buildTree();
+}
+function buildTree(){
+  const items=tabItems(),col=CATCOL[tab],tree=$('#tree');
+  let mx=0,my=0;items.forEach(({o})=>{mx=Math.max(mx,o.at[0]);my=Math.max(my,o.at[1])});
+  const w=PX*2+mx*GX,h=PY+my*GY+60;
+  tree.style.width=w+'px';tree.style.height=h+'px';tree.style.setProperty('--c',col);
+  const P=o=>[PX+o.at[0]*GX,PY+o.at[1]*GY];
+  let svg='',byId={};items.forEach(it=>byId[it.o.id]=it);
+  const link=(a,b,cls)=>{const [x1,y1]=P(a),[x2,y2]=P(b),my2=(y1+y2)/2;
+    svg+='<path class="link '+cls+'" data-a="'+a.id+'" data-b="'+b.id+'" d="M'+x1+' '+y1+' C'+x1+' '+my2+' '+x2+' '+my2+' '+x2+' '+y2+'"/>'};
+  items.forEach(({o})=>{(o.req||[]).forEach(r=>{if(byId[r])link(byId[r].o,o,'req')})});
+  const col0=items.filter(({o})=>o.at[0]===0&&!(o.req&&o.req.length)).sort((a,b)=>a.o.at[1]-b.o.at[1]);
+  for(let i=1;i<col0.length;i++)link(col0[i-1].o,col0[i].o,'deco');
+  tree.innerHTML='<div class="catname">'+(CATNAME[tab]||'')+'</div><svg width="'+w+'" height="'+h+'">'+svg+'</svg>';
+  items.forEach(it=>{const {kind,o}=it,[x,y]=P(o);
+    const b=document.createElement('button');b.className='node';b.dataset.id=o.id;b.dataset.kind=kind;
+    b.style.left=x+'px';b.style.top=y+'px';b.title=o.name;
+    b.innerHTML='<div class="ni">'+ic(o.id)+'</div><div class="pips"><i></i><i></i><i></i><i></i><i></i></div><div class="lk">'+ic('lock')+'</div><div class="cdt"></div>';
+    b.onclick=()=>{selNode=it;paintNodes();renderInsp(true);sfx.news()};
+    tree.appendChild(b)});
+  const keep=selNode&&items.find(it=>it.o.id===selNode.o.id);
+  selNode=keep||items.find(it=>nInfo(it.kind,it.o).can)||items[0]||null;
+}
+function paintNodes(){
+  $$('#tree .node').forEach(el=>{
+    const id=el.dataset.id,kind=el.dataset.kind,o=(kind==='power'?POWERS[id]:kind==='trait'?E.TR_BY[id]:E.TE_BY[id]);
+    const n=nInfo(kind,o);
+    el.classList.toggle('lock',n.lock);el.classList.toggle('max',n.max);
+    el.classList.toggle('own',n.lv>0&&!n.max);
+    el.classList.toggle('avail',n.can&&!n.max);
+    el.classList.toggle('need',!n.lock&&n.lv===0&&!n.can&&kind!=='power');
+    el.classList.toggle('sel',!!selNode&&selNode.o.id===id);
+    const pips=el.querySelectorAll('.pips i');pips.forEach((p,i)=>p.classList.toggle('f',i<n.lv));
+    if(kind==='power'){const c=G.path.cd[id];el.classList.toggle('cd',c>0);el.querySelector('.cdt').textContent=c>0?c:''}
+  });
+  $$('#tree .link').forEach(p=>{const a=p.dataset.a,b=p.dataset.b;
+    const find=id=>{const e=tabItems().find(it=>it.o.id===id);return e?lvOf(e.kind,id):0};
+    const la=find(a),lb=find(b);
+    p.classList.toggle('on',la>0);p.classList.toggle('lit',la>0&&lb>0)});
+}
+let inspKey='';
+function renderInsp(force){
+  const el=$('#insp');if(tab==='reg')return;
+  if(!selNode){el.innerHTML='<p>Выбери узел в дереве</p>';inspKey='';return}
+  const {kind,o}=selNode,n=nInfo(kind,o),col=CATCOL[tab];
+  const cd=kind==='power'?G.path.cd[o.id]:0;
+  const swOK=o.id==='swarm'?(sel>=0&&G.rs[sel].I>0):true;
+  const useOK=kind==='power'&&cd<=0&&G.path.dna>=o.cost&&G.cure.detected!==undefined&&G.phase==='run';
+  const key=[o.id,n.lv,n.can,n.lock,cd,useOK,swOK,G.phase].join('|');
+  if(!force&&key===inspKey)return;inspKey=key;
+  const cur=E.describe(kind,o,n.lv),nxt=n.max?null:E.describe(kind,o,n.lv+1);
+  let fx='';
+  cur.forEach((r,i)=>{const nx=nxt&&nxt[i];
+    const bad=(nx?nx[2]:r[2])===false;
+    fx+='<div><span>'+r[0]+'</span><span class="a">'+(n.lv>0||kind==='power'?r[1]:'—')+'</span><span class="ar">'+(nx?'→':'')+'</span><span class="n'+(nx?'':' same')+(bad?' bad':'')+'">'+(nx?nx[1]:'')+'</span></div>'});
+  const unit=ME.role==='path'?'ДНК':'очков';
+  let btn;
+  if(n.max)btn='<button class="buy" disabled>МАКСИМУМ</button>';
+  else if(n.lock)btn='<button class="buy" disabled>'+ic('lock')+'Закрыто</button>';
+  else btn='<button class="buy" id="buybtn"'+(n.can?'':' disabled')+'>'+ic(n.lv>0||kind==='power'?'up':'check')+(n.lv>0||kind==='power'?'Улучшить':'Открыть')+' · '+n.cost+' '+unit+'</button>';
+  if(kind==='power')btn+='<button class="buy alt" id="usebtn"'+(useOK?'':' disabled')+'>'+(cd>0?cd+' дн':'Применить · '+o.cost)+'</button>';
+  el.style.setProperty('--c',col);
+  el.innerHTML='<div class="t"><div class="bigi">'+ic(o.id)+'</div><div><h4>'+o.name+'</h4><div class="lv"><span class="pp">'+[1,2,3,4,5].map(i=>'<i class="'+(i<=n.lv?'f':'')+'"></i>').join('')+'</span><span>УР. '+n.lv+'/'+MAXLV+'</span></div></div></div>'+
+    '<p>'+o.desc+(o.region?' Выбери заражённый регион на карте.':'')+'</p><div class="fx">'+fx+'</div>'+
+    (n.lock?'<div class="req">Нужно: '+n.reqNames.join(', ')+'</div>':'')+'<div class="acts">'+btn+'</div>';
+  const bb=$('#buybtn');if(bb)bb.onclick=()=>{
+    const r=doAct({k:kind==='power'?'pwup':'buy',id:o.id});
+    if(r&&r.ok){sfx.buy();const nd=$('#tree .node[data-id="'+o.id+'"]');if(nd){nd.classList.remove('flash');void nd.offsetWidth;nd.classList.add('flash')}}};
+  const ub=$('#usebtn');if(ub)ub.onclick=()=>usePower(o.id);
+}
 function updatePanel(){
   const path=ME.role==='path';
   const key=ME.role+':'+(path?G.ptype:'')+':'+(G.phase==='setup'?'s':'r');
   if(builtKey!==key){buildPanel(key)}
-  // header
   const S=E.pathStats(G),C=E.cureStats(G);
   const res=path?G.path.dna:G.cure.rp;
   const rv=$('#resv');rv.textContent=Math.floor(res);
@@ -919,69 +1250,36 @@ function updatePanel(){
   lastRes=Math.floor(res);
   if(path){
     const pt=PATHOGENS.find(p=>p.id===G.ptype);
-    $('#pname').textContent=pt?pt.name:'Выбери патоген';$('#psub').textContent='Ты — Заражение';$('#pico').textContent=pt?pt.icon:'?';
+    $('#pname').textContent=pt?pt.name:'Выбери патоген';$('#psub').textContent='Ты — Заражение';
     setMeter('mI','Заразность',S.infM/2.2,S.infM.toFixed(2));setMeter('mV','Заметность',S.visM/1,Math.round(S.visM*100)+'%','#ffb020');
     setMeter('mS','Тяжесть',S.sev/1.4,Math.round(S.sev*100)+'%','#ff7a3d');setMeter('mL','Смертность',S.leth/1.8,Math.round(S.leth*100)+'%','#8b5cf6');
   } else {
-    $('#pname').textContent=G.cure.detected?'Мировой штаб':'Угроза не обнаружена';$('#psub').textContent='Ты — Лекарство';$('#pico').textContent='+';
+    $('#pname').textContent=G.cure.detected?'Мировой штаб':'Угроза не обнаружена';$('#psub').textContent='Ты — Лекарство';
     const rate=C.mult;setMeter('mR','Скорость науки','x'+rate.toFixed(2),Math.min(1,rate/3));
     setMeter('mF','Финансирование',Math.round(C.fund*100)+'%',Math.min(1,C.fund/2.2),'#36f1cd');
     setMeter('mE','Экономика',Math.round(C.econ*100)+'%',C.econ,C.econ<.7?'#ffb020':'#36f1cd');
     setMeter('mA','Закрытий',Math.round(C.closed),Math.min(1,C.closed/20),'#ff7a3d');
   }
-  // items
-  $$('#list [data-id]').forEach(el=>{
-    const id=el.dataset.id;let own=false,lock=false,cant=false,cd=false,cost=0,reqTxt='';
-    if(el.dataset.kind==='trait'){const t=E.TR_BY[id];own=!!G.path.traits[id];cost=E.traitCost(G,t);
-      if(t.req&&!t.req.every(x=>G.path.traits[x])){lock=true;reqTxt='Нужно: '+t.req.map(x=>E.TR_BY[x].name).join(', ')}
-      cant=!own&&!lock&&G.path.dna<cost;
-      el.querySelector('.cost').textContent=own?'✓':cost}
-    else if(el.dataset.kind==='tech'){const t=E.TE_BY[id];own=!!G.cure.techs[id];cost=t.cost;
-      if(t.req&&!t.req.every(x=>G.cure.techs[x])){lock=true;reqTxt='Нужно: '+t.req.map(x=>E.TE_BY[x].name).join(', ')}
-      cant=!own&&!lock&&G.cure.rp<cost;el.querySelector('.cost').textContent=own?'✓':cost}
-    else if(el.dataset.kind==='power'){const p=POWERS[id];cost=p.cost;const c=G.path.cd[id];cd=c>0;cant=!cd&&G.path.dna<cost;
-      el.querySelector('.cost').textContent=cd?c+' дн':cost}
-    el.classList.toggle('own',own);el.classList.toggle('lock',lock&&!own);el.classList.toggle('cant',cant);el.classList.toggle('cd',cd);
-    el.classList.toggle('can',!own&&!lock&&!cant&&!cd);
-    const rq=el.querySelector('.req');if(rq)rq.textContent=lock?reqTxt:'';
-  });
-  $$('#list .rrow').forEach(row=>{const i=+row.dataset.r,r=G.rs[i],d=REG[i];
-    row.querySelector('small').textContent=known(i)?(r.I>0?'заражено '+(r.I/d.pop*100<.1?'<0.1':(r.I/d.pop*100).toFixed(1))+'%':'чисто'):(G.cure.detected?'нет данных':'—');
-    row.querySelector('.b').classList.toggle('on',!!r.border);row.querySelector('.a').classList.toggle('on',!!r.air);row.querySelector('.q').classList.toggle('on',!!r.quar)});
+  if(tab==='reg'){
+    $$('#list .rrow').forEach(row=>{const i=+row.dataset.r,r=G.rs[i],d=REG[i];
+      row.querySelector('small').textContent=known(i)?(r.I>0?'заражено '+(r.I/d.pop*100<.1?'<0.1':(r.I/d.pop*100).toFixed(1))+'%':'чисто'):(G.cure.detected?'нет данных':'—');
+      row.querySelector('.b').classList.toggle('on',!!r.border);row.querySelector('.a').classList.toggle('on',!!r.air);row.querySelector('.q').classList.toggle('on',!!r.quar)});
+  } else {paintNodes();renderInsp(false)}
 }
 function setMeter(id,label,val,txt,col){
   let el=document.getElementById(id);
   if(!el){el=document.createElement('div');el.className='m';el.id=id;el.innerHTML='<div class="l"><span></span><b></b></div><div class="bar"><i></i></div>';$('#meters').appendChild(el)}
-  // allow (label, ratio, text) or (label, text, ratio)
   let ratio=val,text=txt;if(typeof val==='string'){text=val;ratio=txt}
   el.querySelector('span').textContent=label;el.querySelector('b').textContent=text;
   const bar=el.querySelector('i');bar.style.width=Math.max(0,Math.min(1,ratio))*100+'%';if(col)bar.style.setProperty('--c',col);
 }
-function buildPanel(key){
-  builtKey=key;const path=ME.role==='path';
-  $('#meters').innerHTML='';
-  const tabs=path?PTABS:CTABS;
-  if(!tab||!tabs.find(x=>x[0]===tab))tab=tabs[0][0];
-  $('#resl').textContent=path?'ДНК':'Очки исследований';
-  $('#ptabs').innerHTML='';
-  tabs.forEach(([id,name])=>{const b=document.createElement('button');b.textContent=name;b.className=id===tab?'on':'';b.onclick=()=>{tab=id;buildPanel(builtKey);updatePanel();$('#list').scrollTop=0};$('#ptabs').appendChild(b)});
+function buildRegions(){
   const L=$('#list');L.innerHTML='';
-  const mk=(kind,o,extra)=>{const b=document.createElement('button');b.className='item';b.dataset.id=o.id;b.dataset.kind=kind;
-    b.innerHTML='<div class="ih"><b>'+o.name+'</b><span class="cost"></span></div><p>'+o.desc+(extra||'')+'</p><i class="req"></i>';
-    b.onclick=()=>{ if(kind==='power'){usePower(o.id)} else {const r=doAct({k:'buy',id:o.id});if(r&&r.ok){sfx.buy()}} };L.appendChild(b)};
-  if(path){
-    if(tab==='pow'){for(const id in POWERS)mk('power',{id,name:POWERS[id].name,desc:POWERS[id].desc+(POWERS[id].region?' Выбери заражённый регион на карте.':'')})}
-    else TRAITS.filter(t=>t.cat===tab).forEach(t=>mk('trait',t));
-  } else {
-    if(tab==='reg'){
-      const sorted=[...REG].sort((a,b)=>b.pop-a.pop);
-      sorted.forEach(d=>{const row=document.createElement('div');row.className='rrow';row.dataset.r=d.i;
-        row.innerHTML='<div class="n">'+d.name+'<small></small></div><button class="tg b" title="Закрыть границы ('+COST.border+')">Гр</button><button class="tg a" title="Закрыть аэропорты ('+COST.air+')">Ав</button><button class="tg q" title="Карантин ('+COST.quar+')">Кр</button>';
-        row.querySelector('.b').onclick=()=>toggle('border',d.i);row.querySelector('.a').onclick=()=>toggle('air',d.i);row.querySelector('.q').onclick=()=>toggle('quar',d.i);
-        row.querySelector('.n').onclick=()=>{sel=d.i;onState()};L.appendChild(row)});
-      const h=document.createElement('div');h.className='small';h.style.margin='6px 4px';h.innerHTML='Гр — граница ('+COST.border+'), Ав — аэропорты ('+COST.air+'), Кр — карантин ('+COST.quar+'). Каждое закрытие бьёт по экономике и доходу очков.';L.appendChild(h);
-    } else TECHS.filter(t=>t.cat===tab).forEach(t=>mk('tech',t));
-  }
+  [...REG].sort((a,b)=>b.pop-a.pop).forEach(d=>{const row=document.createElement('div');row.className='rrow';row.dataset.r=d.i;
+    row.innerHTML='<div class="n">'+d.name+'<small></small></div><button class="tg b" title="Закрыть границы ('+COST.border+')">'+ic('border')+'</button><button class="tg a" title="Закрыть аэропорты ('+COST.air+')">'+ic('plane')+'</button><button class="tg q" title="Карантин ('+COST.quar+')">'+ic('quar')+'</button>';
+    row.querySelector('.b').onclick=()=>toggle('border',d.i);row.querySelector('.a').onclick=()=>toggle('air',d.i);row.querySelector('.q').onclick=()=>toggle('quar',d.i);
+    row.querySelector('.n').onclick=()=>{sel=d.i;onState()};L.appendChild(row)});
+  const h=document.createElement('div');h.className='small';h.style.margin='6px 4px';h.innerHTML='Граница — '+COST.border+', аэропорты — '+COST.air+', карантин — '+COST.quar+'. Каждое закрытие бьёт по экономике и доходу очков.';L.appendChild(h);
 }
 function usePower(id){
   if(id==='swarm'){if(sel<0||G.rs[sel].I<=0){toast('Выбери заражённый регион на карте',true);return}
@@ -993,7 +1291,7 @@ function toggle(what,i){const r=doAct({k:'toggle',what,r:i});if(r&&r.ok)sfx.buy(
 /* ---------- region card ---------- */
 let rcKey='';
 function updateRC(){
-  const el=$('#rc');if(sel<0||G.phase==='setup'&&false){el.classList.add('hidden');return}
+  const el=$('#rc');if(sel<0){el.classList.add('hidden');return}
   const d=REG[sel],r=G.rs[sel],kn=known(sel),N=d.pop;el.classList.remove('hidden');
   const key=sel+':'+ME.role;
   if(rcKey!==key){rcKey=key;
@@ -1001,18 +1299,19 @@ function updateRC(){
     el.querySelector('.x').onclick=()=>{sel=-1;onState()};
     const a=$('#rca');
     if(ME.role==='cure'){
-      [['border','Границы',COST.border],['air','Аэропорты',COST.air],['quar','Карантин',COST.quar]].forEach(([w,n,c])=>{const b=document.createElement('button');b.dataset.w=w;b.innerHTML=n+'<small>'+c+'</small>';b.onclick=()=>toggle(w,sel);a.appendChild(b)});
+      [['border','Границы',COST.border,'border'],['air','Аэропорты',COST.air,'plane'],['quar','Карантин',COST.quar,'quar']].forEach(([w,n,c,i])=>{const b=document.createElement('button');b.dataset.w=w;b.innerHTML=ic(i)+n+'<small>'+c+'</small>';b.onclick=()=>toggle(w,sel);a.appendChild(b)});
     } else {
-      a.style.gridTemplateColumns='1fr';const b=document.createElement('button');b.dataset.w='swarm';b.innerHTML='Суперраспространитель<small>'+POWERS.swarm.cost+' ДНК</small>';b.onclick=()=>usePower('swarm');a.appendChild(b)}
+      a.style.gridTemplateColumns='1fr';const b=document.createElement('button');b.dataset.w='swarm';b.innerHTML=ic('swarm')+'Суперраспространитель<small>'+POWERS.swarm.cost+' ДНК</small>';b.onclick=()=>usePower('swarm');a.appendChild(b)}
   }
   el.querySelector('h3').textContent=d.name;
   el.querySelector('.sub').textContent=fmt(N)+' · '+CL[d.clim]+' · '+(d.wealth>.7?'богатый':d.wealth>.4?'средний':'бедный');
   const rows=[['Здоровые','H','#6f95ff'],['Заражённые','I','#ff3b6b'],['Погибшие','D','#8b5cf6'],['Вылеченные','C','#36f1cd']];
   let h='';
-  for(const [n,k,c] of rows){const v=r[k];h+='<span>'+n+'</span><div class="bar"><i style="width:'+(kn?v/N*100:(k==='H'?100:0))+'%;background:'+c+'"></i></div><b>'+(kn?fmt(v):'?')+'</b>'}
-  h+='<span>Осведомлённость</span><div class="bar"><i style="width:'+r.aw*100+'%;background:#ffb020"></i></div><b>'+Math.round(r.aw*100)+'%</b>';
+  for(const [n,k,c] of rows){const v=r[k];h+='<span>'+n+'</span><div class="bar"><i style="width:'+(kn?v/N*100:(k==='H'?100:0))+'%;background:'+c+';color:'+c+'"></i></div><b>'+(kn?fmt(v):'?')+'</b>'}
+  h+='<span>Осведомлённость</span><div class="bar"><i style="width:'+r.aw*100+'%;background:#ffb020;color:#ffb020"></i></div><b>'+Math.round(r.aw*100)+'%</b>';
   $('#rcs').innerHTML=h;
   $$('#rca button').forEach(b=>{const w=b.dataset.w;b.classList.toggle('on',w!=='swarm'&&!!r[w]);if(w==='swarm')b.style.opacity=(r.I>0&&G.path.cd.swarm<=0)?1:.45});
+  if(tab==='pow')renderInsp(false);
 }
 
 /* ---------- overlays ---------- */
@@ -1025,21 +1324,21 @@ function updateOverlays(){
     if(ME.role==='path'){
       if(ovKey!==k){ovKey=k;
         so.classList.add('soft');
-        so.innerHTML='<div class="card" style="width:min(820px,100%)"><h2>Создай патоген</h2><p class="lead">Выбери тип и нажми на карте регион, откуда начнётся эпидемия.</p><div class="pgrid">'+
-          PATHOGENS.map(p=>'<button class="pg'+(setup.ptype===p.id?' on':'')+'" data-p="'+p.id+'"><div class="ico">'+p.icon+'</div><b>'+p.name+'</b><span>'+p.desc+'</span></button>').join('')+
+        so.innerHTML='<div class="card glass" style="position:relative;width:min(820px,100%)"><h2>Создай патоген</h2><p class="lead">Выбери тип и нажми на карте регион, откуда начнётся эпидемия.</p><div class="pgrid">'+
+          PATHOGENS.map(p=>'<button class="pg'+(setup.ptype===p.id?' on':'')+'" data-p="'+p.id+'"><div class="ico">'+ic(p.icon)+'</div><b>'+p.name+'</b><span>'+p.desc+'</span></button>').join('')+
           '</div><button class="btn" id="gostart" '+(setup.ptype&&setup.r>=0?'':'disabled')+'>'+(setup.r>=0?'Заразить: '+REG[setup.r].name:'Выбери регион на карте')+'</button></div>';
         $$('#ovsetup .pg').forEach(b=>b.onclick=()=>{setup.ptype=b.dataset.p;ovKey='';updateOverlays();sfx.buy()});
         $('#gostart').onclick=()=>{doAct({k:'start',ptype:setup.ptype,r:setup.r})};
       }
     } else if(ovKey!==k){ovKey=k;so.classList.remove('soft');
-      so.innerHTML='<div class="card" style="max-width:480px;text-align:center"><h2>Готовься к худшему</h2><p class="lead">Заражение выбирает патоген и точку старта. Пока можно изучить карту. Когда игра начнётся, патоген будет скрыт, пока его не заметят.</p><div class="status"><i class="dot"></i><span>Ждём противника…</span></div></div>'}
+      so.innerHTML='<div class="card glass" style="position:relative;max-width:480px;text-align:center"><h2>Готовься к худшему</h2><p class="lead">Заражение выбирает патоген и точку старта. Пока можно изучить карту. Когда игра начнётся, патоген будет скрыт, пока его не заметят.</p><div class="status"><i class="dot"></i><span>Ждём противника…</span></div></div>'}
   } else {so.classList.add('hidden');ovKey=''}
   if(G.phase==='over'){
     if(eo.classList.contains('hidden')){sfx.end();
       const won=G.winner===ME.role;
       eo.classList.remove('hidden');
       const dead=(G.tot.D/TOTAL_POP*100).toFixed(1),regs=G.rs.filter(r=>r.I>0||r.D>0).length;
-      eo.innerHTML='<div class="card" style="max-width:520px;text-align:center"><div class="win" style="color:'+(G.winner==='path'?PATH:CURE)+'">'+(won?'Победа':'Поражение')+'</div><div class="big">'+(G.winner==='path'?'Заражение победило':'Лекарство победило')+'</div><p class="lead">'+G.reason+'</p>'+
+      eo.innerHTML='<div class="card glass" style="position:relative;max-width:520px;text-align:center"><div class="win" style="color:'+(G.winner==='path'?PATH:CURE)+'">'+(won?'Победа':'Поражение')+'</div><div class="big">'+(G.winner==='path'?'Заражение победило':'Лекарство победило')+'</div><p class="lead">'+G.reason+'</p>'+
         '<div class="stats"><div><b>'+G.day+'</b><span>дней</span></div><div><b>'+dead+'%</b><span>погибло</span></div><div><b>'+regs+'/'+REG.length+'</b><span>регионов</span></div></div>'+
         (ME.host?'<button class="btn" id="rematch">Реванш (поменяться ролями)</button>':'<div class="status"><i class="dot"></i><span>Хост может начать реванш</span></div>')+
         '<button class="btn ghost" id="tolobby">В меню</button></div>';
@@ -1049,7 +1348,7 @@ function updateOverlays(){
   } else eo.classList.add('hidden');
 }
 function resetUI(){
-  lastEv=0;fx=[];newsList.length=0;renderNews();sel=-1;setup={ptype:null,r:-1};builtKey='';tab=null;rcKey='';ovKey='';lastRes=null;
+  document.body.classList.remove('setup');lastEv=0;fx=[];parts.length=0;newsList.length=0;renderNews();sel=-1;setup={ptype:null,r:-1};builtKey='';tab=null;rcKey='';ovKey='';lastRes=null;selNode=null;inspKey='';lastComboT=0;comboN=0;
   document.body.classList.toggle('role-cure',ME.role==='cure');
   $('#ovend').classList.add('hidden');
 }
@@ -1088,10 +1387,10 @@ const LAND_PTS=[];
 (function(){const step=1.9;for(let lat=82;lat>=-56;lat-=step)for(let lon=-170;lon<=180;lon+=step){
   if(POLY.some(p=>inPoly(lon,lat,p))){let best=-1,bd=1e9;for(const d of REG){const m=Math.cos((lat+d.lat)/2*Math.PI/180);const dd=Math.hypot((lon-d.lon)*m,lat-d.lat);if(dd<bd){bd=dd;best=d.i}}
     LAND_PTS.push([lon,lat,bd<34?best:-1])}}})();
-
 function layout(){
   const mobile=W<=920;
-  const x0=mobile?6:12,x1=mobile?W-6:W-398,y0=mobile?96:66,y1=mobile?H*.56-4:H-100;
+  const su=document.body.classList.contains('setup');
+  const x0=mobile?30:44,x1=(mobile||su)?W-(mobile?30:44):W-540,y0=mobile?Math.max(104,$('#hud').getBoundingClientRect().bottom+14):104,y1=su?H-(mobile?330:300):mobile?H*.4-4:H-96;
   const w=x1-x0,h=y1-y0;SC=Math.min(w/350,h/134);
   OX=x0+(w-350*SC)/2;OY=y0+(h-134*SC)/2;
   dotSize=Math.max(1.5,SC*1.25);
@@ -1118,56 +1417,88 @@ function regColor(i,time){
 function curve(a,b){const p=nodes[a],q=nodes[b];const mx=(p.x+q.x)/2,my=(p.y+q.y)/2-Math.hypot(p.x-q.x,p.y-q.y)*.22;return [p.x,p.y,mx,my,q.x,q.y]}
 function bez(c,t){const u=1-t;return [u*u*c[0]+2*u*t*c[2]+t*t*c[4],u*u*c[1]+2*u*t*c[3]+t*t*c[5]]}
 let hover=-1,mouse={x:0,y:0};
-function bubblePos(b){const n=nodes[b.r];const ang=(b.id*2.399)%6.283;const rr=n.r+18;return [n.x+Math.cos(ang)*rr,n.y+Math.sin(ang)*rr-4]}
+const parts=[];
+const P_DNA=new Path2D(DNA_D),P_FLASK=new Path2D(FLASK_D);
+const BR=27;
+function bubblePos(b){const n=nodes[b.r];const ang=(b.id*2.399)%6.283;const rr=n.r+BR+4;return [n.x+Math.cos(ang)*rr,n.y+Math.sin(ang)*rr-4]}
+function burst(x,y,col,n){for(let i=0;i<n;i++){const a=Math.random()*6.283,v=1+Math.random()*3.2;parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life:1,col,s:1.5+Math.random()*2.5})}}
+function floatText(x,y,txt,col){const d=document.createElement('div');d.className='fl';d.style.left=x+'px';d.style.top=y+'px';d.style.setProperty('--c',col);d.textContent=txt;$('#floats').appendChild(d);setTimeout(()=>d.remove(),1150)}
+function drawIcon(p,x,y,s,col,lw){ctx.save();ctx.translate(x-s/2,y-s/2);ctx.scale(s/24,s/24);ctx.lineWidth=lw;ctx.strokeStyle=col;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke(p);ctx.restore()}
 
 function frame(time){
   if(!started)return;requestAnimationFrame(frame);
   if(!G)return;
   ctx.clearRect(0,0,W,H);
-  // atmosphere
-  const g=ctx.createRadialGradient(W*.4,H*.45,50,W*.4,H*.45,Math.max(W,H)*.75);g.addColorStop(0,'#0c1428');g.addColorStop(1,'#060a13');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  const g=ctx.createRadialGradient(W*.4,H*.45,50,W*.4,H*.45,Math.max(W,H)*.75);g.addColorStop(0,'#0e1830');g.addColorStop(1,'#050811');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  // graticule
+  ctx.strokeStyle='rgba(120,150,210,.06)';ctx.lineWidth=1;ctx.beginPath();
+  for(let lon=-150;lon<=180;lon+=30){const x=OX+(lon+170)*SC;ctx.moveTo(x,OY);ctx.lineTo(x,OY+134*SC)}
+  for(let lat=70;lat>=-50;lat-=20){const y=OY+(82-lat)*SC;ctx.moveTo(OX,y);ctx.lineTo(OX+350*SC,y)}
+  ctx.stroke();
   // dots
   for(let i=0;i<=REG.length;i++){
     ctx.fillStyle=i===REG.length?'rgba(96,122,188,.22)':regColor(i,time);
     const arr=dots[i];for(let k=0;k<arr.length;k+=2)ctx.fillRect(arr[k]-dotSize/2,arr[k+1]-dotSize/2,dotSize,dotSize);
   }
-  // route hints
+  // glow halos
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  for(let i=0;i<REG.length;i++){if(!known(i))continue;const r=G.rs[i],N=REG[i].pop,n=nodes[i];
+    if(r.I>0){const f=Math.sqrt(r.I/N),rad=n.r*2.2+f*SC*22,a=Math.min(.5,.1+f*.55)*(1+.15*Math.sin(time/400+i));
+      const gr=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,rad);gr.addColorStop(0,'rgba(255,59,107,'+a+')');gr.addColorStop(1,'rgba(255,59,107,0)');ctx.fillStyle=gr;ctx.beginPath();ctx.arc(n.x,n.y,rad,0,7);ctx.fill()}
+    if(r.C/N>.05){const rad=n.r*2+SC*8,a=Math.min(.4,r.C/N*.6);const gr=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,rad);gr.addColorStop(0,'rgba(54,241,205,'+a+')');gr.addColorStop(1,'rgba(54,241,205,0)');ctx.fillStyle=gr;ctx.beginPath();ctx.arc(n.x,n.y,rad,0,7);ctx.fill()}
+  }
+  ctx.restore();
+  // scan band
+  const sy=OY+((time/40)%(134*SC+80))-40;const sg=ctx.createLinearGradient(0,sy-30,0,sy+30);sg.addColorStop(0,'rgba(120,170,255,0)');sg.addColorStop(.5,'rgba(120,170,255,.05)');sg.addColorStop(1,'rgba(120,170,255,0)');ctx.fillStyle=sg;ctx.fillRect(OX,sy-30,350*SC,60);
+  // closed borders
   ctx.lineWidth=1;
-  for(const [a,b] of E.LAND){const A=G.rs[a],B=G.rs[b];const closed=A.border||B.border;
-    if(!closed)continue;ctx.strokeStyle='rgba(255,70,70,.7)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(nodes[a].x,nodes[a].y);ctx.lineTo(nodes[b].x,nodes[b].y);ctx.stroke()}
+  for(const [a,b] of E.LAND){const A=G.rs[a],B=G.rs[b];if(!(A.border||B.border))continue;ctx.strokeStyle='rgba(255,70,70,.7)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(nodes[a].x,nodes[a].y);ctx.lineTo(nodes[b].x,nodes[b].y);ctx.stroke()}
   ctx.setLineDash([]);
   // fx arcs
   const now=performance.now();fx=fx.filter(f=>now-f.t0<1500);
   for(const f of fx){const c=curve(f.a,f.b),t=(now-f.t0)/1400;if(t>1)continue;
     const col=f.mode==='air'?'255,209,102':f.mode==='sea'?'76,201,240':'255,59,107';
-    ctx.strokeStyle='rgba('+col+','+(.5*(1-t))+')';ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(c[0],c[1]);
+    ctx.strokeStyle='rgba('+col+','+(.55*(1-t))+')';ctx.lineWidth=1.6;ctx.shadowColor='rgb('+col+')';ctx.shadowBlur=8;ctx.beginPath();ctx.moveTo(c[0],c[1]);
     for(let k=1;k<=24;k++){const p=bez(c,Math.min(1,t*k/24));ctx.lineTo(p[0],p[1])}ctx.stroke();
-    const p=bez(c,t);ctx.fillStyle='rgba('+col+',.95)';ctx.beginPath();ctx.arc(p[0],p[1],3,0,7);ctx.fill();}
+    const p=bez(c,t);ctx.fillStyle='rgba('+col+',.95)';ctx.beginPath();ctx.arc(p[0],p[1],3.2,0,7);ctx.fill();ctx.shadowBlur=0}
   // nodes
   const accent=ME.role==='path'?PATH:CURE;
   for(let i=0;i<REG.length;i++){const n=nodes[i],r=G.rs[i];
-    ctx.lineWidth=1.2;ctx.strokeStyle=i===sel?accent:(i===hover?'rgba(255,255,255,.8)':'rgba(255,255,255,.28)');
-    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,7);ctx.stroke();
+    ctx.lineWidth=i===sel?2:1.2;ctx.strokeStyle=i===sel?accent:(i===hover?'rgba(255,255,255,.85)':'rgba(255,255,255,.28)');
+    if(i===sel){ctx.shadowColor=accent;ctx.shadowBlur=14}
+    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,7);ctx.stroke();ctx.shadowBlur=0;
     if(setup.r===i&&G.phase==='setup'){ctx.fillStyle=PATH;ctx.beginPath();ctx.arc(n.x,n.y,n.r*.55,0,7);ctx.fill();ctx.strokeStyle=PATH;ctx.beginPath();ctx.arc(n.x,n.y,n.r+4+Math.sin(time/300)*2,0,7);ctx.stroke()}
     if(r.border){ctx.strokeStyle='#ff4646';ctx.lineWidth=2.6;ctx.beginPath();ctx.arc(n.x,n.y,n.r+3,-.4,2.1);ctx.stroke()}
     if(r.quar){ctx.strokeStyle='#ffb020';ctx.lineWidth=1.6;ctx.setLineDash([3,3]);ctx.beginPath();ctx.arc(n.x,n.y,n.r+7,0,7);ctx.stroke();ctx.setLineDash([])}
     if(r.air){ctx.fillStyle='#ff7a3d';ctx.fillRect(n.x+n.r*.7,n.y-n.r-4,7,7);ctx.fillStyle='#fff';ctx.font='700 6px sans-serif';ctx.fillText('A',n.x+n.r*.7+1.6,n.y-n.r+1.6)}
-    if(i===sel||i===hover){ctx.fillStyle='rgba(255,255,255,.9)';ctx.font='600 11px '+getComputedStyle(document.body).fontFamily;ctx.textAlign='center';ctx.fillText(REG[i].name,n.x,n.y-n.r-8);ctx.textAlign='left'}
+    if(i===sel||i===hover){ctx.fillStyle='rgba(255,255,255,.92)';ctx.font='600 11px '+getComputedStyle(document.body).fontFamily;ctx.textAlign='center';ctx.fillText(REG[i].name,n.x,n.y-n.r-8);ctx.textAlign='left'}
   }
   // bubbles
-  for(const b of G.bubbles){if(b.role!==ME.role)continue;const [x,y]=bubblePos(b);const pulse=1+.09*Math.sin(time/230+b.id);
-    const col=b.role==='path'?PATH:CURE,rad=15*pulse*(b.ttl<8?(.6+b.ttl/20):1);
-    const gr=ctx.createRadialGradient(x,y,2,x,y,rad+9);gr.addColorStop(0,col+'88');gr.addColorStop(1,col+'00');ctx.fillStyle=gr;ctx.beginPath();ctx.arc(x,y,rad+9,0,7);ctx.fill();
-    ctx.fillStyle='rgba(8,12,22,.9)';ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,rad,0,7);ctx.fill();ctx.stroke();
-    ctx.fillStyle='#fff';ctx.font='800 11px ui-monospace,monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('+'+b.v,x,y+.5);ctx.textAlign='left';ctx.textBaseline='alphabetic'}
+  for(const b of G.bubbles){if(b.role!==ME.role)continue;const [x,y]=bubblePos(b);
+    const col=b.role==='path'?PATH:CURE,pulse=1+.07*Math.sin(time/240+b.id),low=b.ttl<8,R=BR*pulse*(low?(.78+b.ttl/36):1);
+    // glow
+    const gr=ctx.createRadialGradient(x,y,R*.4,x,y,R+20);gr.addColorStop(0,col+'aa');gr.addColorStop(1,col+'00');ctx.fillStyle=gr;ctx.beginPath();ctx.arc(x,y,R+20,0,7);ctx.fill();
+    // ripple
+    const t=((time/1000)+b.id*.37)%1;ctx.strokeStyle=col;ctx.globalAlpha=(1-t)*.55;ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,R+t*16,0,7);ctx.stroke();ctx.globalAlpha=1;
+    // body
+    ctx.fillStyle='rgba(8,12,24,.94)';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();
+    ctx.shadowColor=col;ctx.shadowBlur=14;ctx.strokeStyle=col;ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.stroke();ctx.shadowBlur=0;
+    // ttl ring
+    const fr=Math.max(0,b.ttl/26);ctx.globalAlpha=low&&Math.sin(time/90)>0?.4:1;ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.lineCap='round';ctx.beginPath();ctx.arc(x,y,R-5,-Math.PI/2,-Math.PI/2+6.283*fr);ctx.stroke();ctx.lineCap='butt';ctx.globalAlpha=1;
+    drawIcon(b.role==='path'?P_DNA:P_FLASK,x,y-7,18,col,2.2);
+    ctx.fillStyle='#fff';ctx.font='800 13px "JetBrains Mono",ui-monospace,monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('+'+b.v,x,y+11);ctx.textAlign='left';ctx.textBaseline='alphabetic'}
+  // particles
+  for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vx*=.95;p.vy*=.95;p.life-=.03;if(p.life<=0){parts.splice(i,1);continue}
+    ctx.globalAlpha=p.life;ctx.fillStyle=p.col;ctx.shadowColor=p.col;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(p.x,p.y,p.s*p.life+.5,0,7);ctx.fill()}
+  ctx.globalAlpha=1;ctx.shadowBlur=0;
 }
 function nodeAt(x,y,pad=10){let best=-1,bd=1e9;for(let i=0;i<nodes.length;i++){const d=Math.hypot(nodes[i].x-x,nodes[i].y-y);if(d<nodes[i].r+pad&&d<bd){bd=d;best=i}}return best}
-function bubbleAt(x,y){if(!G)return null;for(const b of G.bubbles){if(b.role!==ME.role)continue;const [bx,by]=bubblePos(b);if(Math.hypot(bx-x,by-y)<22)return b}return null}
+function bubbleAt(x,y){if(!G)return null;for(const b of G.bubbles){if(b.role!==ME.role)continue;const [bx,by]=bubblePos(b);if(Math.hypot(bx-x,by-y)<BR+9)return b}return null}
 function pt(e){const r=cv.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
 cv.addEventListener('pointerdown',e=>{
   if(!G)return;const [x,y]=pt(e);
   const b=bubbleAt(x,y);
-  if(b){const r=doAct({k:'collect',id:b.id});if(r&&r.ok){sfx.collect();if(ME.host)G.bubbles=G.bubbles.filter(q=>q.id!==b.id);else G.bubbles=G.bubbles.filter(q=>q.id!==b.id)}return}
+  if(b){const r=doAct({k:'collect',id:b.id});if(r&&r.ok){sfx.collect();const col=b.role==='path'?PATH:CURE;burst(x,y,col,18);const [bx,by]=bubblePos(b);floatText(bx,by-BR,'+'+(r.v||b.v)+(r.combo>1?'  ×'+r.combo:''),col);G.bubbles=G.bubbles.filter(q=>q.id!==b.id)}return}
   const i=nodeAt(x,y,12);
   if(G.phase==='setup'&&ME.role==='path'){if(i>=0){setup.r=i;sel=i;ovKey='';onState()}return}
   sel=i;onState();
@@ -1200,7 +1531,7 @@ if(location.hash.length>=5){
   $$('#ltabs button')[1].click();$('#jcode').value=c;
 }
 $('#jcode').addEventListener('input',e=>{e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,'')});
-window.__vector={E,get G(){return G},ME,doAct,get nodes(){return nodes},broadcast,onState};
+window.__vector={E,get G(){return G},ME,doAct,get nodes(){return nodes},broadcast,onState,get selNode(){return selNode}};
 })();
 </script>
 </body>
